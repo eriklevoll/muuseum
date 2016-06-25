@@ -55,7 +55,7 @@
       return $(this).css('display') !== 'none';
     }).length;
     for (i = 0; i < pictureNumbers.length; i++) {
-      children.eq(i%cols_count).append('<img src="/content/images/gallery/IMG_0' + pictureNumbers[i] + '.jpg"/>');
+      children.eq(i%cols_count).append('<img src="content/images/gallery/IMG_0' + pictureNumbers[i] + '.jpg"/>');
     }
   };
 
@@ -65,7 +65,7 @@
       return $(this).css('display') !== 'none';
     }).length;
     for (i = 0; i < pictureNumbers.length; i++) {
-      children.eq(i%cols_count).append('<img src="/content/images/gallery/IMG_0' + pictureNumbers[i] + '.jpg"/>');
+      children.eq(i%cols_count).append('<img src="content/images/gallery/IMG_0' + pictureNumbers[i] + '.jpg"/>');
     }
   };
 
