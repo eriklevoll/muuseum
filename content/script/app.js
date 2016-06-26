@@ -32,6 +32,7 @@
       fixedTheme          = picturesOverlay.find('.fixed-theme-container'),
       largePicContainer   = largePictureOverlay.find('.large-picture-container'),
       picturesBody    = picturesOverlay.find('.pictures-body'),
+      contactSide     = contactOverlay.find('.contact-side'),
       carsBody        = carsOverlay.find('.cars-body'),
       thumbDiv        = picturesBody.find('.thumb-div');
   var contactContact = contactBody.find('#contact .heading'),
@@ -45,6 +46,9 @@
     var section     = contactBody.find($(this).attr('href') + ' .heading');
     var sectionTop  = section.position().top;
     var scrollTop   = contactOverlay.scrollTop();
+    var str = 'calc(100vh + '+sectionTop + 'px + '+scrollTop + 'px)';
+    // console.log(str);
+    contactBody.css({'height': str});
     contactOverlay.animate({
       scrollTop: sectionTop + scrollTop
     }, 300);
@@ -115,6 +119,7 @@
   sideNavUl.children().on('click', function() {
     // console.log();
     $(this).siblings().css({'background':'none'});
+    console.log($(this).html());
     $(this).css({'background':'rgba(250,250,250,0.2)'});
   });
 
