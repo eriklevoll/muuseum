@@ -18,6 +18,8 @@
   var navButtonsWrap  = $('header').find('.nav-buttons-wrapper'),
       videoContainer  = $('.video-container'),
       pageLogo        = $('.page-logo');
+      pageLang        = $('.page-language');
+      backBtn        = $('.overlay-back-button');
   var carsOverlay         = $('.cars-page-overlay'),
       picturesOverlay     = $('.pictures-page-overlay'),
       contactOverlay      = $('.contact-page-overlay'),
@@ -43,7 +45,6 @@
     var section     = contactBody.find($(this).attr('href') + ' .heading');
     var sectionTop  = section.position().top;
     var scrollTop   = contactOverlay.scrollTop();
-
     contactOverlay.animate({
       scrollTop: sectionTop + scrollTop
     }, 300);
@@ -76,12 +77,22 @@
   var fixVideoSize = function() {
     windowWidth = $(window).width();
     windowHeight = $(window).height();
-    if (windowWidth < windowHeight*1.4) {
-      videoContainer.find('video').css({'width': 'auto'});
+    if (windowWidth < windowHeight*1.85) {
+      pageLogo.hide();
+      if (windowWidth < windowHeight*1.4) {
+        videoContainer.find('video').css({'width': 'auto'});
+        pageLogo
+      } else {
+        videoContainer.find('video').css({'width': '100%'});
+      }
     } else {
-      videoContainer.find('video').css({'width': '100%'});
+      if (backBtn.css('display') == 'none')
+      {
+        pageLogo.show();
+      }
     }
   };
+
 
   var frontPage = function() {
     videoContainer.find('video').get(0).play();
@@ -136,12 +147,18 @@
     var overlayName = '.' + $(this).attr('data-overlay');
     navButtonsWrap.css({'z-index': '1'});
     $(overlayName).fadeIn(300,function() {
+      pageLogo.hide();
+      backBtn.show();
       $(this).css({'display': 'flex'});
       videoContainer.find('video').get(0).pause();
     });
+
   });
 
-  pageLogo.on('click', function() {
+  backBtn.on('click', function() {
+    backBtn.hide();
+    pageLogo.show();
+    fixVideoSize();
     frontPage();
   });
 
@@ -149,6 +166,9 @@
     if (e.which === 27) {
       if (largePictureOverlay.css('display') == 'none') {
         videoContainer.find('video').get(0).play();
+        backBtn.hide();
+        pageLogo.show();
+        fixVideoSize();
         frontPage();
       }
       else {
