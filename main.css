@@ -991,6 +991,9 @@ header .nav-buttons-wrapper .nav-button-five {
     padding: 0 20px;
     margin-left: 0;
   }
+  .pictures-page-overlay .pictures-content .pictures-body, .cars-page-overlay .pictures-content .pictures-body, .cars-page-overlay .cars-content .pictures-body, .cars-page-overlay .cars-content .cars-body {
+    margin-left: 0;
+  }
 }
 
 @media (max-width: 250px) {

@@ -74,6 +74,19 @@
     }
   };
 
+  var checkMobile = function() {
+    if(!jQuery.browser.mobile)
+    {
+      var video   = $('.video-container').find('video');
+      var sources = video.find('source');
+      for(var i = 0; i<sources.length;i++) {
+       sources[i].setAttribute('src', sources[i].getAttribute('data-src'));
+      }
+      video.load();
+    }
+  };
+
+  checkMobile();
   distributePictureCols();
   distributeCarCols();
 
