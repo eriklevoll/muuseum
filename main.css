@@ -680,9 +680,6 @@ header .nav-buttons-wrapper .nav-button-five {
 }
 
 .contact-page-overlay {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-flex-flow: column nowrap;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
