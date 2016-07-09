@@ -304,6 +304,11 @@ a:visited, a:active, a:link, a:hover {
   padding-right: 50px;
 }
 
+.blur-class {
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
+}
+
 header {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -320,33 +325,36 @@ header {
 
 header .nav-buttons-wrapper {
   margin-top: 75px;
-  padding: 0 50px;
-  width: 70%;
-  max-width: 725px;
+  -webkit-filter: blur(0.7px);
+          filter: blur(0.7px);
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-flex-flow: row wrap;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
   z-index: 3;
 }
 
+header .nav-buttons-wrapper .nav-buttons-up {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .nav-buttons-wrapper .nav-buttons-down {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 header .nav-buttons-wrapper .nav-button-one, header .nav-buttons-wrapper .nav-button-two, header .nav-buttons-wrapper .nav-button-three, header .nav-buttons-wrapper .nav-button-four, header .nav-buttons-wrapper .nav-button-five, header .nav-buttons-wrapper .nav-button-six {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.4);
   height: 140px;
   width: 140px;
-  margin: 10px 35px;
+  margin: 10px 100px;
   border-radius: 85px;
   border: 1px solid #ccc;
-  -webkit-filter: blur(0.85px);
-          filter: blur(0.85px);
   font-family: "Ovo", serif;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -375,16 +383,6 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
           transform: scale(1.2);
   background: rgba(0, 0, 0, 0.5);
   cursor: pointer;
-  -webkit-filter: blur(0px);
-          filter: blur(0px);
-}
-
-header .nav-buttons-wrapper .nav-button-one {
-  font-size: 14px;
-}
-
-header .nav-buttons-wrapper .nav-button-five {
-  font-size: 15px;
 }
 
 .page-language {
@@ -459,17 +457,12 @@ header .nav-buttons-wrapper .nav-button-five {
   position: fixed;
   left: 15px;
   top: 5px;
-  height: 110px;
-  width: 120px;
-  border-radius: 60px;
-  background: white;
+  height: 109px;
+  width: 110px;
   z-index: 10;
-  background: url("content/images/logo8.jpg");
+  background: url("content/images/logo-trans.png");
   background-repeat: no-repeat;
   background-position: center;
-  -webkit-filter: invert(100%) sepia(100%);
-          filter: invert(100%) sepia(100%);
-  opacity: 0.5;
   background-size: contain;
   transition: all .25s ease-in-out;
 }
@@ -560,6 +553,10 @@ header .nav-buttons-wrapper .nav-button-five {
   background: rgba(250, 250, 250, 0.3) !important;
 }
 
+.pictures-page-overlay .pictures-content .pictures-side ul li:first-child, .cars-page-overlay .pictures-content .pictures-side ul li:first-child, .cars-page-overlay .cars-content .pictures-side ul li:first-child, .cars-page-overlay .cars-content .cars-side ul li:first-child {
+  background: rgba(250, 250, 250, 0.2);
+}
+
 .pictures-page-overlay .pictures-content .pictures-side ul #all-images, .cars-page-overlay .pictures-content .pictures-side ul #all-images, .cars-page-overlay .cars-content .pictures-side ul #all-images, .cars-page-overlay .cars-content .cars-side ul #all-images {
   background: rgba(250, 250, 250, 0.2);
   margin-top: 5px;
@@ -598,9 +595,6 @@ header .nav-buttons-wrapper .nav-button-five {
 }
 
 .pictures-page-overlay .pictures-content .pictures-body .col1 img, .cars-page-overlay .pictures-content .pictures-body .col1 img, .cars-page-overlay .cars-content .pictures-body .col1 img, .cars-page-overlay .cars-content .cars-body .col1 img, .pictures-page-overlay .pictures-content .pictures-body .col2 img, .cars-page-overlay .pictures-content .pictures-body .col2 img, .cars-page-overlay .cars-content .pictures-body .col2 img, .cars-page-overlay .cars-content .cars-body .col2 img, .pictures-page-overlay .pictures-content .pictures-body .col3 img, .cars-page-overlay .pictures-content .pictures-body .col3 img, .cars-page-overlay .cars-content .pictures-body .col3 img, .cars-page-overlay .cars-content .cars-body .col3 img, .pictures-page-overlay .pictures-content .pictures-body .col4 img, .cars-page-overlay .pictures-content .pictures-body .col4 img, .cars-page-overlay .cars-content .pictures-body .col4 img, .cars-page-overlay .cars-content .cars-body .col4 img, .pictures-page-overlay .pictures-content .pictures-body .col5 img, .cars-page-overlay .pictures-content .pictures-body .col5 img, .cars-page-overlay .cars-content .pictures-body .col5 img, .cars-page-overlay .cars-content .cars-body .col5 img {
-  -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotate(180deg);
   width: 100%;
   display: block;
   height: auto;
@@ -664,9 +658,6 @@ header .nav-buttons-wrapper .nav-button-five {
 }
 
 .cars-page-overlay .cars-content .cars-body .col1 img, .cars-page-overlay .cars-content .cars-body .col2 img, .cars-page-overlay .cars-content .cars-body .col3 img, .cars-page-overlay .cars-content .cars-body .col4 img, .cars-page-overlay .cars-content .cars-body .col5 img {
-  -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotate(180deg);
   width: 100%;
   display: block;
   height: auto;

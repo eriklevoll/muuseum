@@ -48,6 +48,9 @@ a:visited, a:active, a:link, a:hover
     width: 100%
     padding-right: 50px
 
+.blur-class
+  filter: blur(0px)
+
 header
   display: flex
   justify-content: center
@@ -55,26 +58,33 @@ header
   width: 100vw
   height: 100vh
   .nav-buttons-wrapper
+    // background: pink
     margin-top: 75px
-    padding: 0 50px
-    width: 70%
-    max-width: 725px
+    filter: blur(0.7px)
+    // padding: 0 50px
+    // width: 70%
+    // max-width: 725px
     display: flex
-    justify-content: space-between
-    align-items: center
-    flex-flow: row wrap
+    // justify-content: space-between
+    // align-items: center
+    flex-flow: column nowrap
     z-index: $z-nav-buttons-wrap
+    .nav-buttons-up
+      // background: green
+      display: flex
+    .nav-buttons-down
+      display: flex
+      // background: olive
     .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
       p
         padding-left: 2px
         // filter: blur(1px)
-      background: rgba(0,0,0,0.30)
+      background: rgba(0,0,0,0.40)
       height: 140px
       width: 140px
-      margin: 10px 35px
+      margin: 10px 100px
       border-radius: 85px
       border: 1px solid #ccc
-      filter: blur(0.85px)
       font-family: $font3, serif
       display: flex
       justify-content: center
@@ -89,11 +99,11 @@ header
         transform: scale(1.2)
         background: rgba(0, 0, 0, 0.5)
         cursor: pointer
-        filter: blur(0px)
-    .nav-button-one
-      font-size: 14px
-    .nav-button-five
-      font-size: 15px
+        // filter: blur(0px)
+    // .nav-button-one
+    //   font-size: 14px
+    // .nav-button-five
+    //   font-size: 15px
 
 .page-language
   position: absolute
@@ -151,17 +161,18 @@ header
   position: fixed
   left: 15px
   top: 5px
-  height: 110px
-  width: 120px
-  border-radius: 60px
-  background: white
+  height: 109px
+  width: 110px
+  // background: black
+  // border-radius: 60px
+  // background: white
   z-index: $z-page-logo
-  background: url("content/images/logo8.jpg")
+  background: url("content/images/logo-trans.png")
   // background: #ccc
   background-repeat: no-repeat
   background-position: center
-  filter: invert(100%) sepia(100%)
-  opacity: (0.50)
+  // filter: invert(100%) sepia(100%)
+  // opacity: (0.50)
   background-size: contain
   transition: all .25s ease-in-out
   &:hover
@@ -174,6 +185,7 @@ header
   @extend .overlay-class
   flex-direction: column
   overflow-x: hidden
+  // display: flex
   .pictures-header
     @extend .header-style
     height: 100px
@@ -227,6 +239,8 @@ header
           transition: all .25s ease-in-out
           &:hover
             background: rgba(250,250,250,0.3) !important
+          &:first-child
+            background: rgba(250,250,250,0.2)
         #all-images
           // color: #a8a6a6
           background: rgba(250,250,250,0.2)
@@ -249,7 +263,7 @@ header
         flex: 1
         height: 500px
         img
-          transform: rotate(180deg)
+          // transform: rotate(180deg)
           width: 100%
           display: block
           height: auto
@@ -290,6 +304,7 @@ header
             background: rgba(250,250,250,0.3)
           &:first-child
             margin-top: 50px
+
     .cars-body
       @extend .pictures-body
       margin-left: 0
@@ -301,7 +316,7 @@ header
         flex: 1
         height: 500px
         img
-          transform: rotate(180deg)
+          // transform: rotate(180deg)
           width: 100%
           display: block
           height: auto

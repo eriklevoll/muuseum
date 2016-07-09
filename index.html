@@ -15,28 +15,26 @@
   </div>
   <header> 
     <div class="nav-buttons-wrapper">
-      <div data-overlay="contact-page-overlay" class="nav-button-four">
-        <p>Kontakt</p>
+      <div class="nav-buttons-up">
+        <div data-overlay="contact-page-overlay" class="nav-button-five">
+          <p>Muuseum</p>
+        </div>
+        <div data-overlay="cars-page-overlay" class="nav-button-one">
+          <p>Näitus</p>
+        </div>
       </div>
-      <div data-overlay="cars-page-overlay" class="nav-button-one">
-        <p>Näitus</p>
-      </div>
-      <div data-overlay="pictures-page-overlay" class="nav-button-two">
-        <p>Ajastud</p>
-      </div>
-      <div data-overlay="publications-page-overlay" class="nav-button-three">
-        <p>Kirjatööd</p>
-      </div>
-      <div data-overlay="museum-page-overlay" class="nav-button-five">
-        <p>Muuseumist</p>
-      </div>
-      <div data-overlay="museum-page-overlay" class="nav-button-six">
-        <p>Tühi</p>
+      <div class="nav-buttons-down">
+        <div data-overlay="pictures-page-overlay" class="nav-button-two">
+          <p>Ajastud</p>
+        </div>
+        <div data-overlay="publications-page-overlay" class="nav-button-three">
+          <p>Kirjatöö</p>
+        </div>
       </div>
     </div>
   </header>
   <div class="video-filter-overlay"></div>
-  <div class="cars-page-overlay">
+  <div class="cars-page-overlay .no-display">
     <header class="cars-header">
       <p>// Näitus // Eksponaadid</p>
     </header>
@@ -134,15 +132,12 @@
         <section id="documents">
           <div class="heading">Dokumendid</div>
           <article>
-            <div class="document-download"><a href="content/documents/file.pdf" target="_blank">
+            <div class="document-download"><a href="content/documents/Põhikiri.pdf" target="_blank">
                 <div class="download-image"></div>
-                <p>Document_1.pdf</p></a>Esimese dokumendi kirjeldus</div>
-            <div class="document-download"><a href="content/documents/file.pdf" target="_blank">
+                <p>Põhikiri.pdf</p></a>Muuseumi põhikiri</div>
+            <div class="document-download"><a href="content/documents/raamatukogu 2016.pdf" target="_blank">
                 <div class="download-image"></div>
-                <p>Document_2.pdf</p></a>Teise dokumendi kirjeldus</div>
-            <div class="document-download"><a href="content/documents/file.pdf" target="_blank">
-                <div class="download-image"></div>
-                <p>Document_3.pdf</p></a>Kolmanda dokumendi kirjeldus</div>
+                <p>raamatukogu 2016.pdf</p></a>Teise dokumendi kirjeldus</div>
           </article>
         </section>
         <section id="projects">
@@ -156,7 +151,7 @@
       </section>
     </div>
   </div>
-  <div class="pictures-page-overlay">
+  <div class="pictures-page-overlay .no-display">
     <header class="pictures-header">
       <p>// Pildigalerii</p>
       <hr/>
@@ -168,11 +163,11 @@
           <hr id="static-hr"/>
         </div>
         <ul>
-          <li>Tsaariaeg</li>
-          <li>Saksaaeg</li>
-          <li>Eestiaeg</li>
-          <li>Nõukogude aeg</li>
-          <li>Kaasaeg</li>
+          <li data-title="0" class=".active">Tsaariaeg</li>
+          <li data-title="1">Saksaaeg</li>
+          <li data-title="2">Eestiaeg</li>
+          <li data-title="3">Nõukogude aeg</li>
+          <li data-title="4">Kaasaeg</li>
         </ul>
       </aside>
       <section class="pictures-body">
