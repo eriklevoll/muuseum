@@ -576,9 +576,9 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
   -webkit-align-items: flex-start;
       -ms-flex-align: start;
           align-items: flex-start;
-  -webkit-flex-flow: row wrap;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   margin-left: 250px;
 }
 
@@ -588,10 +588,6 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
 
 .pictures-page-overlay .pictures-content .pictures-body .col1, .cars-page-overlay .pictures-content .pictures-body .col1, .cars-page-overlay .cars-content .pictures-body .col1, .cars-page-overlay .cars-content .cars-body .col1, .pictures-page-overlay .pictures-content .pictures-body .col2, .cars-page-overlay .pictures-content .pictures-body .col2, .cars-page-overlay .cars-content .pictures-body .col2, .cars-page-overlay .cars-content .cars-body .col2, .pictures-page-overlay .pictures-content .pictures-body .col3, .cars-page-overlay .pictures-content .pictures-body .col3, .cars-page-overlay .cars-content .pictures-body .col3, .cars-page-overlay .cars-content .cars-body .col3, .pictures-page-overlay .pictures-content .pictures-body .col4, .cars-page-overlay .pictures-content .pictures-body .col4, .cars-page-overlay .cars-content .pictures-body .col4, .cars-page-overlay .cars-content .cars-body .col4, .pictures-page-overlay .pictures-content .pictures-body .col5, .cars-page-overlay .pictures-content .pictures-body .col5, .cars-page-overlay .cars-content .pictures-body .col5, .cars-page-overlay .cars-content .cars-body .col5 {
   border-left: 2px solid black;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  height: 500px;
 }
 
 .pictures-page-overlay .pictures-content .pictures-body .col1 img, .cars-page-overlay .pictures-content .pictures-body .col1 img, .cars-page-overlay .cars-content .pictures-body .col1 img, .cars-page-overlay .cars-content .cars-body .col1 img, .pictures-page-overlay .pictures-content .pictures-body .col2 img, .cars-page-overlay .pictures-content .pictures-body .col2 img, .cars-page-overlay .cars-content .pictures-body .col2 img, .cars-page-overlay .cars-content .cars-body .col2 img, .pictures-page-overlay .pictures-content .pictures-body .col3 img, .cars-page-overlay .pictures-content .pictures-body .col3 img, .cars-page-overlay .cars-content .pictures-body .col3 img, .cars-page-overlay .cars-content .cars-body .col3 img, .pictures-page-overlay .pictures-content .pictures-body .col4 img, .cars-page-overlay .pictures-content .pictures-body .col4 img, .cars-page-overlay .cars-content .pictures-body .col4 img, .cars-page-overlay .cars-content .cars-body .col4 img, .pictures-page-overlay .pictures-content .pictures-body .col5 img, .cars-page-overlay .pictures-content .pictures-body .col5 img, .cars-page-overlay .cars-content .pictures-body .col5 img, .cars-page-overlay .cars-content .cars-body .col5 img {
@@ -599,6 +595,26 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
   display: block;
   height: auto;
   border-bottom: 3px solid black;
+}
+
+.pictures-page-overlay .pictures-content .pictures-body .col1, .cars-page-overlay .pictures-content .pictures-body .col1, .cars-page-overlay .cars-content .pictures-body .col1, .cars-page-overlay .cars-content .cars-body .col1 {
+  width: 20%;
+}
+
+.pictures-page-overlay .pictures-content .pictures-body .col2, .cars-page-overlay .pictures-content .pictures-body .col2, .cars-page-overlay .cars-content .pictures-body .col2, .cars-page-overlay .cars-content .cars-body .col2 {
+  width: 20%;
+}
+
+.pictures-page-overlay .pictures-content .pictures-body .col3, .cars-page-overlay .pictures-content .pictures-body .col3, .cars-page-overlay .cars-content .pictures-body .col3, .cars-page-overlay .cars-content .cars-body .col3 {
+  width: 20%;
+}
+
+.pictures-page-overlay .pictures-content .pictures-body .col4, .cars-page-overlay .pictures-content .pictures-body .col4, .cars-page-overlay .cars-content .pictures-body .col4, .cars-page-overlay .cars-content .cars-body .col4 {
+  width: 20%;
+}
+
+.pictures-page-overlay .pictures-content .pictures-body .col5, .cars-page-overlay .pictures-content .pictures-body .col5, .cars-page-overlay .cars-content .pictures-body .col5, .cars-page-overlay .cars-content .cars-body .col5 {
+  width: 20%;
 }
 
 .cars-page-overlay .cars-header {

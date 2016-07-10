@@ -253,15 +253,15 @@ header
       display: flex
       // justify-content: flex-start
       align-items: flex-start
-      flex-flow: row wrap
+      flex-flow: row nowrap
       // background: pink
       margin-left: 250px
       .col img
         display: none
       .col1, .col2, .col3, .col4, .col5
         border-left: 2px solid black
-        flex: 1
-        height: 500px
+        // flex: 1
+        // height: 500px
         img
           // transform: rotate(180deg)
           width: 100%
@@ -269,7 +269,16 @@ header
           height: auto
           // margin: 3px
           border-bottom: 3px solid black
-
+      .col1
+        width: 20%
+      .col2
+        width: 20%
+      .col3
+        width: 20%
+      .col4
+        width: 20%
+      .col5
+        width: 20%
 .cars-page-overlay
   @extend .pictures-page-overlay
   // display: flex

@@ -2,40 +2,52 @@
 
   var tsarNumbers = 148;
   var tsarExclude = [3,11];
+  var tsarPerct_5 = [19.34,20.055,19.617,20.739,20.312]
+  var tsarPerct_4 = [24.491,24.944,24.708,25.903]
+  var tsarPerct_3 = [33.353,32.84,33.822]
+  var tsarPerct_2 = [49.194,50.833]
+  var Perct_1     = [100]
 
-  var estNumbers  = 324;
-  var estExclude  = [25,144,323];
+  var estNumbers = 324;
+  var estExclude = [25,144,323];
+  var estPerct_5 = [20.308,20.014,19.444,20.026,20.231]
+  var estPerct_4 = [25.08,24.934,24.454,25.558]
+  var estPerct_3 = [32.87,33.31,33.834]
+  var estPerct_2 = [49.522,50.487]
 
   var sovietNumbers = 199;
   var sovietExclude = [1,2,3,53,57,59,76,77,78,101,153,154];
+  var sovietPerct_5 = [19.293,19.717,21.257,21.328,18.685]
+  var sovietPerct_4 = [23.951,25.134,25.181,25.807]
+  var sovietPerct_3 = [33.38,32.948,33.681]
+  var sovietPerct_2 = [49.105,50.929]
+
 
   var germanNumbers = 29;
   var germanExclude = [3,8,15];
+  var germanPerct_5 = [22.85,16.564,16.285,29.684,19.697]
+  var germanPerct_4 = [22.498,25.972,22.518,30.638]
+  var germanPerct_3 = [40.219,24.283,41.744]
+  var germanPerct_2 = [44.994,56.26]
+
 
   var currentNumbers = 38;
   var currentExclude = [];
+  var currentPerct_5 = [19.837,19.863,17.747,20.470,22.705]
+  var currentPerct_4 = [23.052,23.067,27.012,27.589]
+  var currentPerct_3 = [34.207,33.957,31.931]
+  var currentPerct_2 = [49.749,50.254]
 
-  var periodNames = ['TSAARIAEG', 'SAKSAAEG', 'EESTIAEG', 'NKOGUDEAEG', 'PRAEGU'];
-  var periodNumbers = [tsarNumbers, germanNumbers, estNumbers, sovietNumbers, currentNumbers];
-  var periodExcludes = [tsarExclude, germanExclude, estExclude, sovietExclude, currentExclude];
+  var tsarColWidths     = [Perct_1,tsarPerct_2,tsarPerct_3,tsarPerct_4,tsarPerct_5];
+  var estColWidths      = [Perct_1,estPerct_2,estPerct_3,estPerct_4,estPerct_5];
+  var germanColWidths   = [Perct_1,germanPerct_2,germanPerct_3,germanPerct_4,germanPerct_5];
+  var sovietColWidths   = [Perct_1,sovietPerct_2,sovietPerct_3,sovietPerct_4,sovietPerct_5];
+  var currentColWidths  = [Perct_1,currentPerct_2,currentPerct_3,currentPerct_4,currentPerct_5];
 
-
-
-
-  var pictureNumbers = [
-      "002","003","005","006",
-      "007","008","009","010","011","012",
-      "014","015","016","017",
-      "020","021","022","023","024",
-      "025","026","027","028","029","030",
-      "031","032","033","034","035","036",
-      "037","038","039","040","041","042",
-      "043","044","045","046","047","048",
-      "049","050","051","052","053","054",
-      "055","056","057","058","059","060",
-      "061","062","063","064","065","066",
-      "067","068","069","070","071","072"
-  ];
+  var periodNames     = ['TSAARIAEG', 'SAKSAAEG', 'EESTIAEG', 'NKOGUDEAEG', 'PRAEGU'];
+  var periodNumbers   = [tsarNumbers, germanNumbers, estNumbers, sovietNumbers, currentNumbers];
+  var periodExcludes  = [tsarExclude, germanExclude, estExclude, sovietExclude, currentExclude];
+  var periodPercents  = [tsarColWidths, germanColWidths, estColWidths, sovietColWidths, currentColWidths];
 
 var expositionNumbers = [
     "1","2","3","4","5","6",
@@ -124,12 +136,34 @@ var eventsNumbers = [
     var folder = periodNames[period];
     var number = periodNumbers[period];
     var exclude = periodExcludes[period];
+    var percents = periodPercents[period][cols_count-1];
+    console.log(percents);
+    for (i = 0; i < cols_count; i++) {
+      children.eq(i).css({'width': percents[i] + '%'});
+    }
     for (i = 0; i < number; i++) {
       if (jQuery.inArray(i,exclude) != -1) continue;
       if (i < 10) zeros = "000";
       else if (i < 100) zeros = "00";
       else if (i < 1000) zeros = "0";
       children.eq(i%cols_count).append('<img src="content/images/ajastud/'+ folder +'/IMG_' + zeros + i + '.jpg"/>');
+    }
+  };
+
+  var fixColsWidths = function(num_of_cols) {
+    var children = picturesBody.children();
+    var heightsSum = 0;
+    var percentage = 100 / num_of_cols;
+    children.each(function() {
+      heightsSum += $(this).height();
+    });
+    var avg = heightsSum / num_of_cols;
+    for (i = 0; i < num_of_cols; i++) {
+      var child = children.eq(i);
+      var colHeight = child.height();
+      var colWidth = avg / colHeight * percentage;
+      console.log(colWidth)
+      child.css({'width': colWidth + '%'});
     }
   };
 
@@ -200,14 +234,13 @@ var eventsNumbers = [
   };
 
   sideNavUl.children().on('click', function() {
+    var children = picturesBody.children();
+    children.each(function() {
+      console.log($(this).height());
+    });
     if ($(this).hasClass('.active')) return;
     $(this).siblings().css({'background':'none'});
-    var period    = $(this).attr('data-title');
-    // var periodNumbers = $(this).attr('data-number');
-    // var periodExclude = $(this).attr('data-exclude');
-    console.log(period);
-    // console.log(periodNumbers);
-    // console.log(periodExclude);
+    var period = $(this).attr('data-title');
     distributePictureCols(period);
     $(this).css({'background':'rgba(250,250,250,0.2)'});
     $(this).siblings().removeClass('.active');
@@ -241,7 +274,7 @@ var eventsNumbers = [
 
   navButtonsWrap.children().children().on('click', function() {
     var overlayName = '.' + $(this).attr('data-overlay');
-    navButtonsWrap.css({'z-index': '1'});
+    navButtonsWrap.css({'z-index': '3'});
     $(overlayName).fadeIn(300,function() {
       pageLogo.hide();
       backBtn.show();
