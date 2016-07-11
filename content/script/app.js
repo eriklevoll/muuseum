@@ -1,41 +1,49 @@
 (function($) {
 
+  var p = 4;
+  // li(data-title="0") Tsaariaeg
+  // li(data-title="1") Saksaaeg
+  // li(data-title="2") Eestiaeg
+  // li(data-title="3") Nõukogude aeg
+  // li(data-title="4") Kaasaeg
+
   var tsarNumbers = 148;
   var tsarExclude = [3,11];
-  var tsarPerct_5 = [19.34,20.055,19.617,20.739,20.312]
-  var tsarPerct_4 = [24.491,24.944,24.708,25.903]
-  var tsarPerct_3 = [33.353,32.84,33.822]
-  var tsarPerct_2 = [49.194,50.833]
-  var Perct_1     = [100]
+  var tsarPerct_5 = [19.402,20.135,19.222,20.831,20.404];
+  var tsarPerct_4 = [24.595,25.063,24.817,25.516];
+  var tsarPerct_3 = [33.51,32.504,33.989];
+  var tsarPerct_2 = [49.423,50.575];
+  var Perct_1     = [100];
 
   var estNumbers = 324;
   var estExclude = [25,144,323];
-  var estPerct_5 = [20.308,20.014,19.444,20.026,20.231]
-  var estPerct_4 = [25.08,24.934,24.454,25.558]
-  var estPerct_3 = [32.87,33.31,33.834]
-  var estPerct_2 = [49.522,50.487]
+  var estPerct_5 = [20.312,20.014,19.416,20.020,20.228];
+  var estPerct_4 = [25.072,24.9252,24.425,25.5625];
+  var estPerct_3 = [32.856,33.2935,33.838];
+  var estPerct_2 = [49.498,50.488];
 
   var sovietNumbers = 199;
   var sovietExclude = [1,2,3,53,57,59,76,77,78,101,153,154];
-  var sovietPerct_5 = [19.293,19.717,21.257,21.328,18.685]
-  var sovietPerct_4 = [23.951,25.134,25.181,25.807]
-  var sovietPerct_3 = [33.38,32.948,33.681]
-  var sovietPerct_2 = [49.105,50.929]
+  var sovietPerct_5 = [19.284,19.700,21.284,21.347,18.646];
+  var sovietPerct_4 = [23.931,25.134,25.185,25.825];
+  var sovietPerct_3 = [33.376,32.938,33.682];
+  var sovietPerct_2 = [49.085,50.930];
 
 
   var germanNumbers = 29;
   var germanExclude = [3,8,15];
-  var germanPerct_5 = [22.85,16.564,16.285,29.684,19.697]
-  var germanPerct_4 = [22.498,25.972,22.518,30.638]
-  var germanPerct_3 = [40.219,24.283,41.744]
-  var germanPerct_2 = [44.994,56.26]
+  var germanPerct_5 = [22.85,16.480,16.180,29.790,19.655]
+  var germanPerct_5 = [21.771,15.705,15.426,28.365,18.727]
+  var germanPerct_4 = [22.471,26.018,22.478,30.760]
+  var germanPerct_3 = [40.242,24.103,41.806]
+  var germanPerct_2 = [44.910,56.290]
 
 
   var currentNumbers = 38;
   var currentExclude = [];
-  var currentPerct_5 = [19.837,19.863,17.747,20.470,22.705]
-  var currentPerct_4 = [23.052,23.067,27.012,27.589]
-  var currentPerct_3 = [34.207,33.957,31.931]
+  var currentPerct_5 = [19.837,19.863,17.717,20.470,22.750]
+  var currentPerct_4 = [23.004,23.022,27.042,27.618]
+  var currentPerct_3 = [34.220,33.957,31.900]
   var currentPerct_2 = [49.749,50.254]
 
   var tsarColWidths     = [Perct_1,tsarPerct_2,tsarPerct_3,tsarPerct_4,tsarPerct_5];
@@ -126,6 +134,7 @@ var eventsNumbers = [
     }
   };
 
+  //
   var distributePictureCols = function(period) {
     var children = picturesBody.children();
     children.html('');
@@ -137,7 +146,7 @@ var eventsNumbers = [
     var number = periodNumbers[period];
     var exclude = periodExcludes[period];
     var percents = periodPercents[period][cols_count-1];
-    console.log(percents);
+    // console.log(percents);
     for (i = 0; i < cols_count; i++) {
       children.eq(i).css({'width': percents[i] + '%'});
     }
@@ -149,6 +158,8 @@ var eventsNumbers = [
       children.eq(i%cols_count).append('<img src="content/images/ajastud/'+ folder +'/IMG_' + zeros + i + '.jpg"/>');
     }
   };
+
+  distributePictureCols(p);
 
   var fixColsWidths = function(num_of_cols) {
     var children = picturesBody.children();
@@ -235,9 +246,9 @@ var eventsNumbers = [
 
   sideNavUl.children().on('click', function() {
     var children = picturesBody.children();
-    children.each(function() {
-      console.log($(this).height());
-    });
+    // children.each(function() {
+    //   console.log($(this).height());
+    // });
     if ($(this).hasClass('.active')) return;
     $(this).siblings().css({'background':'none'});
     var period = $(this).attr('data-title');
@@ -260,12 +271,24 @@ var eventsNumbers = [
     }
   });
 
-  thumbDiv.on('click', function() {
-    // var source = $(this).find('img').attr('src');
-    // largePicContainer.css({
-    //   'background': 'url('+ source +') no-repeat center center'
-    // });
-    // largePictureOverlay.fadeIn(200,function() {});
+  picturesBody.children().on('click','img', function() {
+    var closeBtn = largePicContainer.find('.large-picture-close');
+    var source = $(this).attr('src');
+    console.log(closeBtn);
+    // closeBtn.css({'background': 'red'});
+    largePicContainer.css({
+      'background': 'url('+ source +') no-repeat center center',
+      'background-size': 'contain'
+    });
+    // largePicContainer.append('<img src="' + source + '"/>' )
+    console.log($(this)[0]);
+    var imgWidth = $(this).width();
+    var loc_left = $(this).position().left;
+    console.log(loc_left + imgWidth);
+    closeBtn.css({
+      'left:':  loc_left + imgWidth +'px !important'
+    })
+    largePictureOverlay.fadeIn(200,function() {});
   });
 
   largePicContainer.find('.large-picture-close').on('click', function() {

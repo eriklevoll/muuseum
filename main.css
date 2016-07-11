@@ -477,6 +477,9 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
       -ms-flex-direction: column;
           flex-direction: column;
   overflow-x: hidden;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .pictures-page-overlay .pictures-header, .cars-page-overlay .pictures-header, .cars-page-overlay .cars-header {
@@ -536,16 +539,15 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
   font-size: 22px;
   font-family: "Source Sans Pro", serif;
   cursor: pointer;
-  width: 100%;
   letter-spacing: 2px;
   position: fixed;
   left: 0;
-  width: 300px;
+  width: 250px;
   height: 100vh;
 }
 
 .pictures-page-overlay .pictures-content .pictures-side ul li, .cars-page-overlay .pictures-content .pictures-side ul li, .cars-page-overlay .cars-content .pictures-side ul li, .cars-page-overlay .cars-content .cars-side ul li {
-  padding: 5px 50px;
+  padding: 5px 0px 5px 50px;
   transition: all .25s ease-in-out;
 }
 
@@ -598,19 +600,19 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
 }
 
 .pictures-page-overlay .pictures-content .pictures-body .col1, .cars-page-overlay .pictures-content .pictures-body .col1, .cars-page-overlay .cars-content .pictures-body .col1, .cars-page-overlay .cars-content .cars-body .col1 {
-  width: 20%;
+  width: 50%;
 }
 
 .pictures-page-overlay .pictures-content .pictures-body .col2, .cars-page-overlay .pictures-content .pictures-body .col2, .cars-page-overlay .cars-content .pictures-body .col2, .cars-page-overlay .cars-content .cars-body .col2 {
-  width: 20%;
+  width: 50%;
 }
 
 .pictures-page-overlay .pictures-content .pictures-body .col3, .cars-page-overlay .pictures-content .pictures-body .col3, .cars-page-overlay .cars-content .pictures-body .col3, .cars-page-overlay .cars-content .cars-body .col3 {
-  width: 20%;
+  width: 33.3%;
 }
 
 .pictures-page-overlay .pictures-content .pictures-body .col4, .cars-page-overlay .pictures-content .pictures-body .col4, .cars-page-overlay .cars-content .pictures-body .col4, .cars-page-overlay .cars-content .cars-body .col4 {
-  width: 20%;
+  width: 25%;
 }
 
 .pictures-page-overlay .pictures-content .pictures-body .col5, .cars-page-overlay .pictures-content .pictures-body .col5, .cars-page-overlay .cars-content .pictures-body .col5, .cars-page-overlay .cars-content .cars-body .col5 {
@@ -826,27 +828,31 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
 }
 
 .picture-large-overlay {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
 }
 
 .picture-large-overlay .large-picture-container {
-  height: 100%;
-  width: 100%;
+  position: absolute;
+  top: 10%;
+  left: 25%;
+  height: 80%;
+  width: 50%;
+  background: red;
 }
 
-.picture-large-overlay .large-picture-container .large-picture-close {
+.picture-large-overlay .large-picture-close {
   position: absolute;
-  top: 40px;
-  right: 40px;
-  height: 35px;
-  width: 35px;
-  font-size: 35px;
-  line-height: 35px;
+  top: 2.5%;
+  left: 28%;
+  width: 50%;
+  font-size: 25px;
+  line-height: 25px;
   color: rgba(255, 255, 255, 0.7);
   cursor: pointer;
+  text-align: right;
 }
 
-.picture-large-overlay .large-picture-container .large-picture-close:hover {
+.picture-large-overlay .large-picture-close:hover {
   color: white;
 }
 

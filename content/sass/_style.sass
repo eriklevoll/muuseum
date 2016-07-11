@@ -185,7 +185,7 @@ header
   @extend .overlay-class
   flex-direction: column
   overflow-x: hidden
-  // display: flex
+  display: flex
   .pictures-header
     @extend .header-style
     height: 100px
@@ -225,17 +225,16 @@ header
         font-size: 22px
         font-family: $font1, serif
         cursor: pointer
-        width: 100%
         letter-spacing: 2px
         position: fixed
         left: 0
-        width: 300px
+        width: 250px
 
         height: 100vh
         // background: pink
         // overflow-y: scroll
         li
-          padding: 5px 50px
+          padding: 5px 0px 5px 50px
           transition: all .25s ease-in-out
           &:hover
             background: rgba(250,250,250,0.3) !important
@@ -254,7 +253,7 @@ header
       // justify-content: flex-start
       align-items: flex-start
       flex-flow: row nowrap
-      // background: pink
+      // background: red
       margin-left: 250px
       .col img
         display: none
@@ -270,13 +269,13 @@ header
           // margin: 3px
           border-bottom: 3px solid black
       .col1
-        width: 20%
+        width: 50%
       .col2
-        width: 20%
+        width: 50%
       .col3
-        width: 20%
+        width: 33.3%
       .col4
-        width: 20%
+        width: 25%
       .col5
         width: 20%
 .cars-page-overlay
@@ -445,19 +444,26 @@ header
 
 .picture-large-overlay
   @extend .overlay-class
-  background: rgba(0,0,0,0.80)
+  background: rgba(0,0,0,0.90)
+  // display: block
   .large-picture-container
-    height: 100%
-    width: 100%
-    .large-picture-close
-      position: absolute
-      top: 40px
-      right: 40px
-      height: 35px
-      width: 35px
-      font-size: 35px
-      line-height: 35px
-      color: rgba(255,255,255,0.7)
-      cursor: pointer
-      &:hover
-        color: white
+    position: absolute
+    top: 10%
+    left: 25%
+    height: 80%
+    width: 50%
+    background: red
+  .large-picture-close
+    position: absolute
+    top: 2.5%
+    left: 28%
+    // height: 80%
+    width: 50%
+    font-size: 25px
+    line-height: 25px
+    color: rgba(255,255,255,0.7)
+    cursor: pointer
+    text-align: right
+    // background: pink
+    &:hover
+      color: white
