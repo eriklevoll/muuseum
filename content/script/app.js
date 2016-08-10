@@ -228,7 +228,7 @@ var eventsNumbers = [
 
   var frontPage = function() {
     videoContainer.find('video').get(0).play();
-    $('.cars-page-overlay, .pictures-page-overlay, .contact-page-overlay').fadeOut(300,function() {
+    $('.cars-page-overlay, .pictures-page-overlay, .contact-page-overlay, .publications-page-overlay').fadeOut(300,function() {
       navButtonsWrap.css({'z-index': '3'});
     });
   };

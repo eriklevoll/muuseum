@@ -15,16 +15,16 @@
         .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
           // background: green
           // margin: 10px 42px
-          height: 100px
-          width: 100px
+          // height: 100px
+          // width: 100px
 
 @media (max-width: 750px)
   body
     header
       .nav-buttons-wrapper
         .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
-          height: 80px
-          width: 80px
+          // height: 80px
+          // width: 80px
 
 @media (max-width: 660px)
   body
@@ -32,8 +32,8 @@
       .nav-buttons-wrapper
         padding: 0 100px
         .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
-          height: 140px
-          width: 140px
+          // height: 140px
+          // width: 140px
 
 @media (max-width: 630px)
   body
@@ -49,34 +49,41 @@
     header
       .nav-buttons-wrapper
         .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
-          height: 100px
-          width: 100px
+          height: 130px
+          width: 130px
 
 @media (max-width: 415px)
   body
     header
       .nav-buttons-wrapper
         .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
-          height: 100px
-          width: 100px
+          height: 120px
+          width: 120px
 
 @media (max-width: 385px)
   body
     header
       .nav-buttons-wrapper
         width: 100%
+        flex-direction: column
+        height: 85vh
+        margin: 15vh 0 0 0
+        .nav-buttons-up, .nav-buttons-down
+          flex-direction: column
+          align-items: center
+          div
+            width: 98%
+            border-radius: 0
+            margin: 2px
+            transition: none
+            &:hover
+              transform: none
 
-@media (max-width: 300px)
-  body
+@media (max-width: 750px)
+  .pictures-page-overlay, .contact-page-overlay, .publications-page-overlay, .cars-page-overlay
     header
-      .nav-buttons-wrapper
-        .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
-          width: 100%
-          margin: 0
-          border-radius: 0
-          &:hover
-            transform: none
-
+      // background: green
+      padding-top: 100px !important
 
 @media (max-width: 1200px)
   section.pictures-body
@@ -111,6 +118,7 @@
             // background: red
             padding: 5px 5px
 
+
 @media (max-width: 520px)
   section.pictures-body
     .col2
@@ -138,8 +146,9 @@
 @media (max-width: 750px)
   .contact-page-overlay
     header.contact-header
-      padding-top: 70px
-      height: 70px
+      // padding-top: 70px
+      // padding: 70px 0 40px 0
+      // height: 70px
       p
         padding-bottom: 0
         margin-bottom: 0

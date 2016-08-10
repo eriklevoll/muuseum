@@ -79,7 +79,7 @@ body
   .contact-page-overlay
     header.contact-header
       p
-       | Info // Kontakt // Ajalugu 
+        | Info // Kontakt // Ajalugu 
       //- hr
     .contact-content-wrapper
       aside.contact-side
@@ -90,10 +90,12 @@ body
             li Missioon
           a(href="#history")
             li Ajalugu
+          a(href="#collection")
+            li Kollektsioon
           a(href="#documents") 
             li Dokumendid
-          a(href="#projects")
-            li Projektid
+          a(href="#services")
+            li Teenused
           a(href="#databases")    
             li Andmebaasid
       section.contact-body
@@ -107,7 +109,8 @@ body
               allowfullscreen)
             article
              | Eesti vanatehnika muuseum asub aadressil Nõmme-Kase 12 Nõmmel, Tallinnas.
-             | Külastamine toimub kokkuleppel.
+             br
+             | Muuseumit saab külastada aastaringselt eelneva kokkuleppe alusel. Muuseumi külastus on tasuta. 
              br
              br
              | Kontakt:
@@ -122,21 +125,59 @@ body
         section#mission
           .heading Missioon
           article
-            | Muuseumi põhikirjaline eesmärk oli tehnikaajaloo 
-            | väärtustamine ja tehnikamuuseumi rajamine. Tänase seisuga võib öelda, et muuseum on 
-            | loodud ja toimib. Neli aastat on muuseumi ekspositsioon olnud Palmse mõisas ning 
-            | tänasel päeval Tallinnas Nõmmel.
-          
+            | Vanatehnika Muuseumi missioon on  kokku koguda  ja  talletada varajane tehnikalugu. Muuseumi peamine tegevus on teadustöö.
+            br
+            br
+            | Käsilolevad uurimisteemad:
+            br
+            br
+            | Auto/motoajastu algus Balti kubermangudes
+            br
+            | I maailmasõjaeelsete tehnikaklubide tegevus, sportlikud üritused
+            br
+            | Eestimaa kubermangu auto/motomeeste biograafilise leksikoni koostamine
+            br
+            | Liivimaa kubermangu auto/motomeeste biograafilise leksikoni koostamine
+            br
+            | I maailmasõjaeelsed riigi esindusautod, imperaatorliku garaaži masinad
+
         section#history
           .heading Ajalugu
           article
-            | Endine helikassetitehase hoone Nõmme-Kase 12 Tallinnas on pikka aega olnud 
-            | varjupaigaks vanatehnikahuvilistele. Nii oli see 1998. aastast taasasutatud 
-            | klubile Unic ja hiljem Vanatehnika Liidule. Sihtasutus Eesti Vanatehnika Muuseum 
-            | asutati 19. detsembril 2007. aastal. Muuseumi põhikirjaline eesmärk oli tehnikaajaloo 
-            | väärtustamine ja tehnikamuuseumi rajamine. Tänase seisuga võib öelda, et muuseum on 
-            | loodud ja toimib. Neli aastat on muuseumi ekspositsioon olnud Palmse mõisas ning 
-            | tänasel päeval Tallinnas Nõmmel.
+            | 1976 asutati AUTOM-i juures vanatehnika sektsioon - klubi Unic
+            br
+            | 1998 registreeriti MTÜ Unic
+            br
+            | 2005 loodi MTÜ Vanatehnika Liit 
+            br
+            | 2006 avati esimene näitus Palmse mõisa ruumides
+            br
+            | 2007 asutati SA Eesti Vanatehnika Muuseum
+            br
+            | 2011 avati uus näitus praegustes muuseumi ruumides Nõmme-Kase 12
+            br
+            br
+            | Sihtasutuse taha on koondunud peamiselt klubi Unic tegevusega seotud isikud ning klubist aja jooksul võrsunud organisatsioonid. Need on: 
+            | MTÜ Unic, MTÜ Vanatehnikaklubi Retrom, MTÜ Eesti Mootorispordi Ajalugu, MTÜ Mootorrattamuuseum, MTÜ Pobiklubi, MTÜ Eesti Moskvich Klubi, MTÜ Eesti Vabadusvõitluse eramuuseum, Estonian Oldtimer Center, MTÜ Järva-Jaani Tuletõrje Selts, Sihtasutus Tartu Lennundusmuuseum ning lisaks 13 eraisikust restauraatorit ja vanatehnika kollektsionääri.
+            br
+            br
+            | SA Eesti Vanatehnika Muuseum juhtkond:
+            br
+            | Nõukogu esimees - Peeter Mauer. 
+            br
+            | Liikmed - Märt Karu (klubi Unic-Moto), Heikki Perli (tuletõrjeajaloo ühing Retrom), Tõnis Pappel (klubi Unic), Urmas Teearu (Mootorrattamuuseum).
+            br
+            | Juhatus - Rene Levoll
+        section#collection
+          .heading Kollektsioon
+          article
+           | Ekspositsiooni temaatika osas on põhitähelepanu pööratud vanemale vene/nõukogude tehnikale.
+           br
+           | Kollektsioonis on mitmeid ajaloolist väärtust omavaid eksponaate. Märgilisemad on Lavrenti Beria kasutuses olnud limusiin  ZIS 110 ja 1964. aasta märtsi  visiidi ajal Soome Vabariigi presidenti Urho Kaleva Kekkost sõidutanud Tšaika (Gaz 13).
+           br
+           br
+           | Enamus eksponaate on restaureerimata. Museaali staatuse omistamisel järgib muuseum konservatiivset poliitikat. Hetkel on museaalina arvel 30 eset.
+
         section#documents
           .heading Dokumendid
           article
@@ -149,17 +190,81 @@ body
               a(href="content/documents/raamatukogu 2016.pdf" target="_blank")
                 .download-image
                 p raamatukogu 2016.pdf
-              | Teise dokumendi kirjeldus
+              | Muuseumi raamatukogu
 
-        section#projects
-          .heading Projektid
+        section#services
+          .heading Teenused
           article
-           | Tehnikamuuseumis on hetkel käsil mitmed põnevad projektid
+           | Teenustena aitab muuseum identifitseerida vanu tehnikateemalisi fotosid ning selgitada vanasõidukite ajalugu. Teenus on tasuta.
         section#databases
           .heading Andmebaasid
           article
-           | Andmebaasidele ligipääsemiseks vajuta
-           a(href="#")  siia
+           | Eestimaa kubermangu autode, omanike ja autojuhtide nimekiri.
+           br
+           | Liivimaa kubermangu autode, omanike ja autojuhtide nimekiri. 
+           br
+           | Tsaariaegne Peterburi autode ja omanike nimekiri.
+           br
+           | Tsaariaegne Moskva  autode ja omanike nimekiri.
+           br
+           | Tsaariaegne Odessa  autode ja omanike nimekiri.
+           br
+           | Eestiaegne autode ja omanike nimekiri.
+           br
+           | Saksaaegne  autode ja omanike nimekiri.
+           br
+           | Nõukogudeaegne autode ja omanike nimekiri.
+           br
+           br
+           | Andmebaasid ei ole täielikud. 
+           | Eestimaa- ja Liivimaa kubermangude auto/motomeeste andmestik on olnud muuseumi aastatepikkune töö ja selle täiendamine toimub pidevalt. 
+           br
+           | Venemaa osas on olemas andmestik teatud aastate kohta. 
+           br
+           | Eestiaja kohta on olemas registreerimisandmed mõnedes linnades ja maakondades (puudub Tallinn). 
+           br
+           | Saksaaja kohta on andmed liiklemisloa saanud tsiviilsõidukite kohta.
+           br
+           | Nõukodude perioodi kohta on olemas üsna põhjalik andmestik, kuid ka siin esineb olulisi lünki.
+           br
+           br
+          //-  a(href="#")  siia
+  .publications-page-overlay(class=".no-display")
+    header.publications-header
+      p
+        | // Kirjatöö
+      hr
+    section.publications-content
+      section.publications-body
+        | Kindral Judenitši auto uskumatud seiklused Eestimaal. Tuna 1/2013, lk. 150–155.
+        br
+        br
+        | Университет в Тарту и 300 лет дома Романовых: история старой фотографии. Москва, Родина. - 2013. - № 6. С. 126-127.
+        br
+        br
+        | 100 aastat Kuradisilda ehk ühe vana foto lugu. Horisont 4/2013, lk. 30-34.
+        br
+        br
+        | Sada aastat Vene impeeriumi viimasest autovõidusõidust. Horisont 4/2014, lk. 14-21.
+        br
+        br
+        | Невероятные приключения автомобиля Юденича в Эстонии. Москва, Родина. - 2014. - № 2. С. 156-158.
+        br
+        br
+        | Impeeriumi viimane autovõistlus: Balti Auto- ja Aeroklubi III autovõistlus suurvürstinna Viktoria Fjodorovna auhinnale. Eesti Vanatehnika Muuseum. Tallinn 2014.
+        br
+        br
+        | Последний автопробег Империи: III Пробег на приз Великой Княгини Виктории Федоровны. Таллин. Издание Эстонского музея ретротехники. Таллинн 2014 г.
+        br
+        br
+        | The Last Motor Race of the Empire. The Third Baltic Automobile and Aero Club Competition for the Grand Duchess Victoria Feodorovna Prize. Estonian Old Technics Museum. Tallinn 2014.
+        br
+        br
+        | Tsaari motopärand Eestimaa teedel. Tuna 1/2016, lk. 149–152.
+        br
+        br
+        | Delaunay-Belleville Vene riiki teenimas. Horisont  2/2016, lk. 16-23.
+
   .pictures-page-overlay(class=".no-display")
     header.pictures-header
       p

@@ -278,7 +278,7 @@ a:visited, a:active, a:link, a:hover {
   width: 100%;
 }
 
-.overlay-class, .pictures-page-overlay, .cars-page-overlay, .video-filter-overlay, .contact-page-overlay, .picture-large-overlay {
+.overlay-class, .pictures-page-overlay, .cars-page-overlay, .video-filter-overlay, .publications-page-overlay, .contact-page-overlay, .picture-large-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -290,16 +290,17 @@ a:visited, a:active, a:link, a:hover {
   overflow-x: hidden;
 }
 
-.header-style, .pictures-page-overlay .pictures-header, .cars-page-overlay .pictures-header, .cars-page-overlay .cars-header, .contact-page-overlay .contact-header {
-  height: 100px;
-  color: #292929;
+.header-style, .pictures-page-overlay .pictures-header, .cars-page-overlay .pictures-header, .cars-page-overlay .cars-header, .publications-page-overlay .publications-header, .contact-page-overlay .contact-header {
+  height: 0px;
+  padding: 50px 0;
+  color: #4e4d4d;
   font-size: 30px;
   text-transform: uppercase;
   font-family: "Montserrat";
   text-align: right;
 }
 
-.header-style p, .pictures-page-overlay .pictures-header p, .cars-page-overlay .pictures-header p, .cars-page-overlay .cars-header p, .contact-page-overlay .contact-header p {
+.header-style p, .pictures-page-overlay .pictures-header p, .cars-page-overlay .pictures-header p, .cars-page-overlay .cars-header p, .publications-page-overlay .publications-header p, .contact-page-overlay .contact-header p {
   width: 100%;
   padding-right: 50px;
 }
@@ -449,6 +450,8 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
   font-size: 25px;
   color: #ccc;
   z-index: 10;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2px;
   cursor: pointer;
   display: none;
 }
@@ -477,13 +480,9 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
       -ms-flex-direction: column;
           flex-direction: column;
   overflow-x: hidden;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .pictures-page-overlay .pictures-header, .cars-page-overlay .pictures-header, .cars-page-overlay .cars-header {
-  height: 100px;
   position: relative;
 }
 
@@ -619,10 +618,6 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
   width: 20%;
 }
 
-.cars-page-overlay .cars-header {
-  height: 100px;
-}
-
 .cars-page-overlay .cars-content .cars-side {
   -webkit-filter: blur(0.55px);
           filter: blur(0.55px);
@@ -688,19 +683,31 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
   z-index: 2;
 }
 
+.publications-page-overlay {
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+.publications-page-overlay .publications-body {
+  margin: 50px 50px;
+  color: white;
+}
+
 .contact-page-overlay {
   -webkit-flex-flow: column nowrap;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
 }
 
+.contact-page-overlay .contact-header {
+  padding: 50px 0;
+}
+
 .contact-page-overlay .contact-content-wrapper {
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .contact-page-overlay .contact-content-wrapper .contact-side {
@@ -717,7 +724,7 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
 }
 
 .contact-page-overlay .contact-content-wrapper .contact-side ul {
-  margin-top: 50px;
+  margin-top: 40px;
   margin-right: 50px;
   font-size: 22px;
   font-family: "Montserrat", serif;
@@ -730,7 +737,7 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
 }
 
 .contact-page-overlay .contact-content-wrapper .contact-side ul li {
-  padding: 10px 50px;
+  padding: 7px 50px;
   transition: all .25s ease-in-out;
   z-index: 20;
 }
@@ -856,27 +863,9 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
   color: white;
 }
 
-@media (max-width: 990px) {
-  body header .nav-buttons-wrapper .nav-button-one, body header .nav-buttons-wrapper .nav-button-two, body header .nav-buttons-wrapper .nav-button-three, body header .nav-buttons-wrapper .nav-button-four, body header .nav-buttons-wrapper .nav-button-five, body header .nav-buttons-wrapper .nav-button-six {
-    height: 100px;
-    width: 100px;
-  }
-}
-
-@media (max-width: 750px) {
-  body header .nav-buttons-wrapper .nav-button-one, body header .nav-buttons-wrapper .nav-button-two, body header .nav-buttons-wrapper .nav-button-three, body header .nav-buttons-wrapper .nav-button-four, body header .nav-buttons-wrapper .nav-button-five, body header .nav-buttons-wrapper .nav-button-six {
-    height: 80px;
-    width: 80px;
-  }
-}
-
 @media (max-width: 660px) {
   body header .nav-buttons-wrapper {
     padding: 0 100px;
-  }
-  body header .nav-buttons-wrapper .nav-button-one, body header .nav-buttons-wrapper .nav-button-two, body header .nav-buttons-wrapper .nav-button-three, body header .nav-buttons-wrapper .nav-button-four, body header .nav-buttons-wrapper .nav-button-five, body header .nav-buttons-wrapper .nav-button-six {
-    height: 140px;
-    width: 140px;
   }
 }
 
@@ -894,34 +883,51 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
 
 @media (max-width: 500px) {
   body header .nav-buttons-wrapper .nav-button-one, body header .nav-buttons-wrapper .nav-button-two, body header .nav-buttons-wrapper .nav-button-three, body header .nav-buttons-wrapper .nav-button-four, body header .nav-buttons-wrapper .nav-button-five, body header .nav-buttons-wrapper .nav-button-six {
-    height: 100px;
-    width: 100px;
+    height: 130px;
+    width: 130px;
   }
 }
 
 @media (max-width: 415px) {
   body header .nav-buttons-wrapper .nav-button-one, body header .nav-buttons-wrapper .nav-button-two, body header .nav-buttons-wrapper .nav-button-three, body header .nav-buttons-wrapper .nav-button-four, body header .nav-buttons-wrapper .nav-button-five, body header .nav-buttons-wrapper .nav-button-six {
-    height: 100px;
-    width: 100px;
+    height: 120px;
+    width: 120px;
   }
 }
 
 @media (max-width: 385px) {
   body header .nav-buttons-wrapper {
     width: 100%;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 85vh;
+    margin: 15vh 0 0 0;
   }
-}
-
-@media (max-width: 300px) {
-  body header .nav-buttons-wrapper .nav-button-one, body header .nav-buttons-wrapper .nav-button-two, body header .nav-buttons-wrapper .nav-button-three, body header .nav-buttons-wrapper .nav-button-four, body header .nav-buttons-wrapper .nav-button-five, body header .nav-buttons-wrapper .nav-button-six {
-    width: 100%;
-    margin: 0;
+  body header .nav-buttons-wrapper .nav-buttons-up, body header .nav-buttons-wrapper .nav-buttons-down {
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body header .nav-buttons-wrapper .nav-buttons-up div, body header .nav-buttons-wrapper .nav-buttons-down div {
+    width: 98%;
     border-radius: 0;
+    margin: 2px;
+    transition: none;
   }
-  body header .nav-buttons-wrapper .nav-button-one:hover, body header .nav-buttons-wrapper .nav-button-two:hover, body header .nav-buttons-wrapper .nav-button-three:hover, body header .nav-buttons-wrapper .nav-button-four:hover, body header .nav-buttons-wrapper .nav-button-five:hover, body header .nav-buttons-wrapper .nav-button-six:hover {
+  body header .nav-buttons-wrapper .nav-buttons-up div:hover, body header .nav-buttons-wrapper .nav-buttons-down div:hover {
     -webkit-transform: none;
         -ms-transform: none;
             transform: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .pictures-page-overlay header, .cars-page-overlay header, .contact-page-overlay header, .publications-page-overlay header, .cars-page-overlay header {
+    padding-top: 100px !important;
   }
 }
 
@@ -989,10 +995,6 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
 }
 
 @media (max-width: 750px) {
-  .contact-page-overlay header.contact-header {
-    padding-top: 70px;
-    height: 70px;
-  }
   .contact-page-overlay header.contact-header p {
     padding-bottom: 0;
     margin-bottom: 0;
