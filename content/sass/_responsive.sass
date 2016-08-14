@@ -1,39 +1,10 @@
-@media (max-width: 1270px)
-  body
-    header
-      // width: 80vw
-      .nav-buttons-wrapper
-        .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
 
-
-
-@media (max-width: 990px)
-  body
-    header
-      // width: 100vw
-      .nav-buttons-wrapper
-        .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
-          // background: green
-          // margin: 10px 42px
-          // height: 100px
-          // width: 100px
-
-@media (max-width: 750px)
-  body
-    header
-      .nav-buttons-wrapper
-        .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
-          // height: 80px
-          // width: 80px
 
 @media (max-width: 660px)
   body
     header
       .nav-buttons-wrapper
         padding: 0 100px
-        .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
-          // height: 140px
-          // width: 140px
 
 @media (max-width: 630px)
   body
@@ -44,21 +15,21 @@
         .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
           margin: 15px 15px
 
-@media (max-width: 500px)
-  body
-    header
-      .nav-buttons-wrapper
-        .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
-          height: 130px
-          width: 130px
+// @media (max-width: 500px)
+//   body
+//     header
+//       .nav-buttons-wrapper
+//         .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
+//           height: 130px
+//           width: 130px
 
-@media (max-width: 415px)
-  body
-    header
-      .nav-buttons-wrapper
-        .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
-          height: 120px
-          width: 120px
+// @media (max-width: 415px)
+//   body
+//     header
+//       .nav-buttons-wrapper
+//         .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
+//           height: 120px
+//           width: 120px
 
 @media (max-width: 385px)
   body
@@ -79,6 +50,8 @@
             transition: none
             &:hover
               transform: none
+            p.en
+              font-size: 16px
 
 // @media (max-width: 750px)
 //   .pictures-page-overlay, .contact-page-overlay, .publications-page-overlay, .cars-page-overlay
@@ -189,25 +162,61 @@
     font-size: 18px
     a
       margin: 0 14px
+  .publications-page-overlay
+    .publications-body
+      padding: 0
+
+@media (max-width: 300px)
+  .publications-page-overlay
+    .publications-body
+      p
+        padding: 0 20px
+      a
+        padding: 0 40px
 
 @media (max-width: 550px)
-  .header-style
+  .pictures-page-overlay, .contact-page-overlay, .publications-page-overlay, .cars-page-overlay
+    header
+      display: flex
+      justify-content: flex-end
+      padding: 25px 0
+      background: $header-bg
+      .subpage-header
+        font-size: 18px
+        a
+          margin: 0 50px
+        .front-page-header
+          width: 100vw
+          height: 60px
+          text-align: left
+          line-height: 60px
+          font-size: 30px
+        .sub-header
+          display: none
+    .pictures-content
+      .pictures-body
+        margin-top: 50px
+  // .header-style
     // align-items: center
-    font-size: 18px
-    // width: 150px
-    a
-      margin: 0 10px
-    .front-page-header
+    // font-size: 18px
+    // // width: 150px
+    // background: pink
+    // display: flex
+    // a
+    //   margin: 0 10px
+    // .front-page-header
       // display: flex
       // justify-content: center
       // line-height: 50px
-      background: #ccc
-      // width: 50vw
-    .sub-header
-      line-height: 50px
-      // flex: 0
-      background: red
+      // background: #ccc
+      // justify-content: flex-start
+      // width: 30vw
+    // .sub-header
+      // display: none
+      // line-height: 50px
+      // // flex: 0
+      // background: red
       // flex-direction: column
-      a
+      // a
         // padding: 50px
       // height: 100px

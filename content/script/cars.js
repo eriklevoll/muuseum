@@ -52,7 +52,7 @@
     }
     for (i = 0; i < number; i++) {
       if (jQuery.inArray(i,exclude) != -1) continue;
-      children.eq(i%cols_count).append('<img src="content/images/'+ folder +'/' + i + '.JPG"/>');
+      children.eq(i%cols_count).append('<img src="/content/images/'+ folder +'/' + i + '.JPG"/>');
     }
   };
 

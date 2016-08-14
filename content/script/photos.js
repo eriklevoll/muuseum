@@ -95,7 +95,7 @@ var eventsNumbers = [
       staticTheme         = picturesOverlay.find('.static-theme-container'),
       fixedTheme          = picturesOverlay.find('.fixed-theme-container'),
       largePicContainer   = largePictureOverlay.find('.large-picture-container'),
-      picturesBody    = picturesOverlay.find('.pictures-body'),      
+      picturesBody    = picturesOverlay.find('.pictures-body'),
       thumbDiv        = picturesBody.find('.thumb-div');
 
   var distributePictureCols = function(period) {
@@ -117,7 +117,7 @@ var eventsNumbers = [
       if (i < 10) zeros = "000";
       else if (i < 100) zeros = "00";
       else if (i < 1000) zeros = "0";
-      children.eq(i%cols_count).append('<img src="content/images/ajastud/'+ folder +'/IMG_' + zeros + i + '.jpg"/>');
+      children.eq(i%cols_count).append('<img src="/content/images/ajastud/'+ folder +'/IMG_' + zeros + i + '.jpg"/>');
     }
   };
 
@@ -197,6 +197,11 @@ var eventsNumbers = [
   });
 
   picturesBody.children().on('click','img', function() {
+    var windowWidth = $(window).width();
+    if (windowWidth <= 750) {
+      console.log('ei');
+      return;
+    }
     var closeBtn = largePicContainer.find('.large-picture-close');
     var source = $(this).attr('src');
     console.log(closeBtn);

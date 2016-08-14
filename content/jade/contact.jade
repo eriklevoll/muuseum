@@ -7,17 +7,22 @@ head
   title Tehnikamuuseum
 body
   .contact-page-overlay
-    header.subpage-header
-      a(href="/muuseum/")
-        | Esileht
-      a(href="/muuseum/contact.html")
-        | Muuseum
-      a(href="/muuseum/expositions.html")
-        | Näitus
-      a(href="/muuseum/photos.html")
-        | Ajastud
-      a(href="/muuseum/publications.html")
-        | Kirjatöö
+    header
+      .subpage-header
+        .front-page-header
+          a(href="/")
+            | Esileht
+        .sub-header
+          .sub-header-top
+            a(href="/contact.html")
+              | Muuseum
+            a(href="/expositions.html")
+              | Näitus
+          .sub-header-bottom
+            a(href="/photos.html")
+              | Ajastud
+            a(href="/publications.html")
+              | Kirjatöö
     .contact-content-wrapper
       aside.contact-side
         ul
@@ -179,5 +184,5 @@ body
   
   script(src="content/script/jquery-1.7.2.min.js")
   script(src="content/script/checkbrowser.js")
-  script(src="content/script/app-min.js")
+  script(src="content/script/contact-min.js")
   
