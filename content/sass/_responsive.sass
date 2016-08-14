@@ -66,13 +66,14 @@
       .nav-buttons-wrapper
         width: 100%
         flex-direction: column
-        height: 85vh
+        // height: 85vh
         margin: 15vh 0 0 0
         .nav-buttons-up, .nav-buttons-down
           flex-direction: column
           align-items: center
           div
             width: 98vw
+            height: 20vh
             border-radius: 0
             margin: 2px
             transition: none
@@ -100,15 +101,16 @@
     .col3
       display: none
   .pictures-page-overlay
+    header
+      .subpage-header
+        hr
+          display: none
     .pictures-content
       .pictures-side
         display: none
 
 @media (max-width: 650px)
   .pictures-page-overlay
-    .pictures-header
-      hr
-        display: none
     .pictures-content
       .pictures-side
         hr#static-hr
@@ -128,11 +130,11 @@
     .col2
       display: none
 
-@media (max-width: 450px)
-  .pictures-page-overlay
-    .pictures-content
-      .pictures-side
-        display: none
+// @media (max-width: 450px)
+//   .pictures-page-overlay
+//     .pictures-content
+//       .pictures-side
+//         display: none
 
 @media (max-width: 1000px)
   .contact-page-overlay

@@ -289,10 +289,10 @@ a:visited, a:active, a:link, a:hover {
   display: flex;
   z-index: 5;
   background: black;
-  overflow-x: hidden;
 }
 
 .header-style, .pictures-page-overlay header, .cars-page-overlay header, .publications-page-overlay header, .contact-page-overlay header {
+  width: 100vw;
   height: 0px;
   padding: 50px 0;
   color: #4e4d4d;
@@ -307,7 +307,6 @@ a:visited, a:active, a:link, a:hover {
 }
 
 .subpage-header {
-  width: auto;
   margin: 0 auto;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -494,7 +493,6 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  overflow-x: hidden;
 }
 
 .pictures-page-overlay header, .cars-page-overlay header {
@@ -597,6 +595,7 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
   margin-left: 250px;
+  overflow-y: scroll;
   margin-top: 100px;
 }
 
@@ -676,12 +675,15 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
   transition: none;
 }
 
-.cars-page-overlay .cars-content .cars-side ul li:hover {
-  background: rgba(250, 250, 250, 0.3);
+.cars-page-overlay .cars-content .cars-side ul li:first-child {
+  margin-top: 20px;
+  background: none;
+  cursor: default;
 }
 
-.cars-page-overlay .cars-content .cars-side ul li:first-child {
-  margin-top: 50px;
+.cars-page-overlay .cars-content .cars-side ul li:first-child:hover {
+  background: none !important;
+  cursor: default;
 }
 
 .cars-page-overlay .cars-content .cars-side ul li#events {
@@ -748,6 +750,7 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  overflow-y: scroll;
 }
 
 .contact-page-overlay .contact-content-wrapper .contact-side {
@@ -945,7 +948,6 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
-    height: 85vh;
     margin: 15vh 0 0 0;
   }
   body header .nav-buttons-wrapper .nav-buttons-up, body header .nav-buttons-wrapper .nav-buttons-down {
@@ -958,6 +960,7 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
   }
   body header .nav-buttons-wrapper .nav-buttons-up div, body header .nav-buttons-wrapper .nav-buttons-down div {
     width: 98vw;
+    height: 20vh;
     border-radius: 0;
     margin: 2px;
     transition: none;
@@ -985,15 +988,15 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
   section.pictures-body .col3, .cars-page-overlay .cars-content section.cars-body .col3 {
     display: none;
   }
+  .pictures-page-overlay header .subpage-header hr, .cars-page-overlay header .subpage-header hr {
+    display: none;
+  }
   .pictures-page-overlay .pictures-content .pictures-side, .cars-page-overlay .pictures-content .pictures-side, .cars-page-overlay .cars-content .pictures-side, .cars-page-overlay .cars-content .cars-side {
     display: none;
   }
 }
 
 @media (max-width: 650px) {
-  .pictures-page-overlay .pictures-header hr, .cars-page-overlay .pictures-header hr, .pictures-page-overlay .cars-page-overlay header hr, .cars-page-overlay .pictures-page-overlay header hr, .cars-page-overlay header hr {
-    display: none;
-  }
   .pictures-page-overlay .pictures-content .pictures-side, .cars-page-overlay .pictures-content .pictures-side, .cars-page-overlay .cars-content .pictures-side, .cars-page-overlay .cars-content .cars-side {
     width: 200px;
   }
@@ -1010,12 +1013,6 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
 
 @media (max-width: 520px) {
   section.pictures-body .col2, .cars-page-overlay .cars-content section.cars-body .col2 {
-    display: none;
-  }
-}
-
-@media (max-width: 450px) {
-  .pictures-page-overlay .pictures-content .pictures-side, .cars-page-overlay .pictures-content .pictures-side, .cars-page-overlay .cars-content .pictures-side, .cars-page-overlay .cars-content .cars-side {
     display: none;
   }
 }

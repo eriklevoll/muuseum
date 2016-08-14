@@ -86,35 +86,18 @@ var eventsNumbers = [
   ];
 
 
-  var mainHeader      = $('header'),
-      navButtonsWrap  = mainHeader.find('.nav-buttons-wrapper'),
-      videoContainer  = $('.video-container'),
-      pageLogo        = $('.page-logo');
+  var pageLogo        = $('.page-logo');
       pageLang        = $('.page-language');
-      backBtn        = $('.overlay-back-button');
-  var carsOverlay         = $('.cars-page-overlay'),
-      picturesOverlay     = $('.pictures-page-overlay'),
-      contactOverlay      = $('.contact-page-overlay'),
+  var picturesOverlay     = $('.pictures-page-overlay'),
       largePictureOverlay = $('.picture-large-overlay'),
-      picturesBtn         = navButtonsWrap.find('.nav-button-two'),
-      carsBtn             = navButtonsWrap.find('.nav-button-one'),
-      contactBody         = contactOverlay.find('.contact-body'),
-      contactNav          = contactOverlay.find('ul'),
       sideNavUl           = picturesOverlay.find('ul'),
       headerHr            = picturesOverlay.find('.pictures-header hr'),
       staticTheme         = picturesOverlay.find('.static-theme-container'),
       fixedTheme          = picturesOverlay.find('.fixed-theme-container'),
       largePicContainer   = largePictureOverlay.find('.large-picture-container'),
-      picturesBody    = picturesOverlay.find('.pictures-body'),
-      contactSide     = contactOverlay.find('.contact-side'),
-      carsBody        = carsOverlay.find('.cars-body'),
+      picturesBody    = picturesOverlay.find('.pictures-body'),      
       thumbDiv        = picturesBody.find('.thumb-div');
-  var contactContact = contactBody.find('#contact .heading'),
-      contactHistory = contactBody.find('#history .heading'),
-      contactContact = contactBody.find('#documents .heading'),
-      contactContact = contactBody.find('#projects .heading');
 
-  //
   var distributePictureCols = function(period) {
     var children = picturesBody.children();
     children.html('');
@@ -126,10 +109,8 @@ var eventsNumbers = [
     var folder = periodNames[period];
     var number = periodNumbers[period];
     var exclude = periodExcludes[period];
-    var percents = periodPercents[period][cols_count-1];
-    // console.log(percents);
     for (i = 0; i < cols_count; i++) {
-      children.eq(i).css({'width': 100/cols_count + '%'});
+      children.eq(i).css({'width': 100.0/cols_count + '%'});
     }
     for (i = 0; i < number; i++) {
       if (jQuery.inArray(i,exclude) != -1) continue;

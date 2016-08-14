@@ -335,6 +335,7 @@ var eventsNumbers = [
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function() {
       fixVideoSize();
+      console.log('now');
     }, 100);
   });
 })(jQuery);
