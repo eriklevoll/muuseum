@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+  meta(charset="UTF-8")
+  meta(name="viewport" content="width=device-width, initial-scale=1")
+  link(rel="stylesheet" href="main-min.css" type="text/css")
+  title Tehnikamuuseum
+body
+  .cars-page-overlay
+    header
+      .subpage-header
+        a(href="/")
+          | Esileht
+        a(href="/contact.html")
+          | Muuseum
+        a(href="expositions.html")
+          | Näitus
+        a(href="photos.html")
+          | Ajastud
+        a(href="publications.html")
+          | Kirjatöö
+        hr
+    section.cars-content
+        aside.cars-side
+          .static-theme-container
+          ul
+            li#expo Näitus
+            li#events Üritused
+            li.expo-list#first Eksponaat 1
+            li.expo-list Eksponaat 1
+            li.expo-list Eksponaat 1
+            li.expo-list Eksponaat 1
+            li.expo-list Eksponaat 1
+            li.expo-list Eksponaat 1
+            li.expo-list Eksponaat 1
+            li.expo-list Eksponaat 1
+            li.expo-list Eksponaat 1
+            li.expo-list Eksponaat 1
+            li.expo-list Eksponaat 1
+            li.expo-list Eksponaat 1
+            li.expo-list Eksponaat 1
+            li.expo-list Eksponaat 1
+            li.expo-list Eksponaat 1
+            li.expo-list Eksponaat 1
+        section.cars-body
+          .col1
+          .col2
+          .col3
+          .col4
+          .col5
+  .page-language
+    a(href="/")
+      .language-est(data-title="Eesti")
+    a(href="/en.html")
+      .language-eng(data-title="Inglise")
+    a(href="ru.html")
+      .language-rus(data-title="Vene")
+    a(href="tib.html")
+      .language-tib(data-title="Tiibeti")
+    //- .language-tib(data-title="བོད་སྐད།")
+  
+  script(src="content/script/jquery-1.7.2.min.js")
+  script(src="content/script/checkbrowser.js")
+  script(src="content/script/cars-min.js")
+  

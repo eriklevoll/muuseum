@@ -72,18 +72,18 @@
           flex-direction: column
           align-items: center
           div
-            width: 98%
+            width: 98vw
             border-radius: 0
             margin: 2px
             transition: none
             &:hover
               transform: none
 
-@media (max-width: 750px)
-  .pictures-page-overlay, .contact-page-overlay, .publications-page-overlay, .cars-page-overlay
-    header
+// @media (max-width: 750px)
+//   .pictures-page-overlay, .contact-page-overlay, .publications-page-overlay, .cars-page-overlay
+//     header
       // background: green
-      padding-top: 100px !important
+      // padding-top: 100px !important
 
 @media (max-width: 1200px)
   section.pictures-body
@@ -99,6 +99,10 @@
   section.pictures-body
     .col3
       display: none
+  .pictures-page-overlay
+    .pictures-content
+      .pictures-side
+        display: none
 
 @media (max-width: 650px)
   .pictures-page-overlay
@@ -169,3 +173,39 @@
       .contact-body
         iframe
           display: none
+
+@media (max-width: 900px)
+  .header-style
+    font-size: 26px
+
+@media (max-width: 800px)
+  .header-style
+    font-size: 22px
+
+@media (max-width: 700px)
+  .header-style
+    font-size: 18px
+    a
+      margin: 0 14px
+
+@media (max-width: 550px)
+  .header-style
+    // align-items: center
+    font-size: 18px
+    // width: 150px
+    a
+      margin: 0 10px
+    .front-page-header
+      // display: flex
+      // justify-content: center
+      // line-height: 50px
+      background: #ccc
+      // width: 50vw
+    .sub-header
+      line-height: 50px
+      // flex: 0
+      background: red
+      // flex-direction: column
+      a
+        // padding: 50px
+      // height: 100px

@@ -284,13 +284,15 @@ a:visited, a:active, a:link, a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  display: none;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   z-index: 5;
   background: black;
   overflow-x: hidden;
 }
 
-.header-style, .pictures-page-overlay .pictures-header, .cars-page-overlay .pictures-header, .cars-page-overlay .cars-header, .publications-page-overlay .publications-header, .contact-page-overlay .contact-header {
+.header-style, .pictures-page-overlay header, .cars-page-overlay header, .publications-page-overlay header, .contact-page-overlay header {
   height: 0px;
   padding: 50px 0;
   color: #4e4d4d;
@@ -300,9 +302,22 @@ a:visited, a:active, a:link, a:hover {
   text-align: right;
 }
 
-.header-style p, .pictures-page-overlay .pictures-header p, .cars-page-overlay .pictures-header p, .cars-page-overlay .cars-header p, .publications-page-overlay .publications-header p, .contact-page-overlay .contact-header p {
-  width: 100%;
-  padding-right: 50px;
+.header-style a, .pictures-page-overlay header a, .cars-page-overlay header a, .publications-page-overlay header a, .contact-page-overlay header a {
+  margin: 0 20px;
+}
+
+.subpage-header {
+  width: auto;
+  margin: 0 auto;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.subpage-header .sub-header {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .blur-class {
@@ -482,11 +497,13 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
   overflow-x: hidden;
 }
 
-.pictures-page-overlay .pictures-header, .cars-page-overlay .pictures-header, .cars-page-overlay .cars-header {
-  position: relative;
+.pictures-page-overlay header, .cars-page-overlay header {
+  z-index: 2;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
 }
 
-.pictures-page-overlay .pictures-header hr, .cars-page-overlay .pictures-header hr, .cars-page-overlay .cars-header hr {
+.pictures-page-overlay header hr, .cars-page-overlay header hr {
   position: absolute;
   right: 0;
   margin: 0;
@@ -526,7 +543,7 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
 }
 
 .pictures-page-overlay .pictures-content .pictures-side h2, .cars-page-overlay .pictures-content .pictures-side h2, .cars-page-overlay .cars-content .pictures-side h2, .cars-page-overlay .cars-content .cars-side h2 {
-  margin-top: 100px;
+  margin-top: 150px;
   font-size: 30px;
   padding: 10px 0;
   font-weight: bold;
@@ -537,7 +554,6 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
   margin-right: 50px;
   font-size: 22px;
   font-family: "Source Sans Pro", serif;
-  cursor: pointer;
   letter-spacing: 2px;
   position: fixed;
   left: 0;
@@ -581,6 +597,7 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
   margin-left: 250px;
+  margin-top: 100px;
 }
 
 .pictures-page-overlay .pictures-content .pictures-body .col img, .cars-page-overlay .pictures-content .pictures-body .col img, .cars-page-overlay .cars-content .pictures-body .col img, .cars-page-overlay .cars-content .cars-body .col img {
@@ -618,10 +635,25 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
   width: 20%;
 }
 
+.cars-page-overlay header {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.cars-page-overlay header hr {
+  position: absolute;
+  right: 0;
+  margin: 0;
+  bottom: 0;
+  border: 0;
+  border-bottom: 1px solid #7c7a7a;
+  width: 90%;
+}
+
 .cars-page-overlay .cars-content .cars-side {
   -webkit-filter: blur(0.55px);
           filter: blur(0.55px);
-  position: relative;
+  position: fixed;
 }
 
 .cars-page-overlay .cars-content .cars-side ul {
@@ -629,10 +661,8 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
   margin-right: 50px;
   font-size: 22px;
   font-family: "Source Sans Pro", serif;
-  cursor: pointer;
   width: 100%;
   letter-spacing: 2px;
-  position: fixed;
   top: 0;
   left: 0;
   width: 300px;
@@ -641,6 +671,7 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
 }
 
 .cars-page-overlay .cars-content .cars-side ul li {
+  cursor: pointer;
   padding: 5px 50px;
   transition: none;
 }
@@ -653,9 +684,22 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
   margin-top: 50px;
 }
 
+.cars-page-overlay .cars-content .cars-side ul li#events {
+  padding-bottom: 10px;
+}
+
+.cars-page-overlay .cars-content .cars-side ul li#first {
+  padding-top: 10px;
+  border-top: 1px solid white;
+}
+
+.cars-page-overlay .cars-content .cars-side .expo-list {
+  font-size: 20px;
+}
+
 .cars-page-overlay .cars-content .cars-body {
-  margin-left: 0;
-  margin-top: -3px;
+  margin-left: 300px;
+  margin-top: 100px;
 }
 
 .cars-page-overlay .cars-content .cars-body .col img {
@@ -664,10 +708,6 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
 
 .cars-page-overlay .cars-content .cars-body .col1, .cars-page-overlay .cars-content .cars-body .col2, .cars-page-overlay .cars-content .cars-body .col3, .cars-page-overlay .cars-content .cars-body .col4, .cars-page-overlay .cars-content .cars-body .col5 {
   border-left: 2px solid black;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  height: 500px;
 }
 
 .cars-page-overlay .cars-content .cars-body .col1 img, .cars-page-overlay .cars-content .cars-body .col2 img, .cars-page-overlay .cars-content .cars-body .col3 img, .cars-page-overlay .cars-content .cars-body .col4 img, .cars-page-overlay .cars-content .cars-body .col5 img {
@@ -700,7 +740,7 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
           flex-flow: column nowrap;
 }
 
-.contact-page-overlay .contact-header {
+.contact-page-overlay header {
   padding: 50px 0;
 }
 
@@ -835,6 +875,7 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
 }
 
 .picture-large-overlay {
+  display: none;
   background: rgba(0, 0, 0, 0.9);
 }
 
@@ -855,11 +896,14 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
   font-size: 25px;
   line-height: 25px;
   color: rgba(255, 255, 255, 0.7);
-  cursor: pointer;
   text-align: right;
 }
 
-.picture-large-overlay .large-picture-close:hover {
+.picture-large-overlay .large-picture-close span {
+  cursor: pointer;
+}
+
+.picture-large-overlay .large-picture-close span:hover {
   color: white;
 }
 
@@ -913,7 +957,7 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
             align-items: center;
   }
   body header .nav-buttons-wrapper .nav-buttons-up div, body header .nav-buttons-wrapper .nav-buttons-down div {
-    width: 98%;
+    width: 98vw;
     border-radius: 0;
     margin: 2px;
     transition: none;
@@ -922,12 +966,6 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
     -webkit-transform: none;
         -ms-transform: none;
             transform: none;
-  }
-}
-
-@media (max-width: 750px) {
-  .pictures-page-overlay header, .cars-page-overlay header, .contact-page-overlay header, .publications-page-overlay header, .cars-page-overlay header {
-    padding-top: 100px !important;
   }
 }
 
@@ -947,10 +985,13 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
   section.pictures-body .col3, .cars-page-overlay .cars-content section.cars-body .col3 {
     display: none;
   }
+  .pictures-page-overlay .pictures-content .pictures-side, .cars-page-overlay .pictures-content .pictures-side, .cars-page-overlay .cars-content .pictures-side, .cars-page-overlay .cars-content .cars-side {
+    display: none;
+  }
 }
 
 @media (max-width: 650px) {
-  .pictures-page-overlay .pictures-header hr, .cars-page-overlay .pictures-header hr, .cars-page-overlay .cars-header hr {
+  .pictures-page-overlay .pictures-header hr, .cars-page-overlay .pictures-header hr, .pictures-page-overlay .cars-page-overlay header hr, .cars-page-overlay .pictures-page-overlay header hr, .cars-page-overlay header hr {
     display: none;
   }
   .pictures-page-overlay .pictures-content .pictures-side, .cars-page-overlay .pictures-content .pictures-side, .cars-page-overlay .cars-content .pictures-side, .cars-page-overlay .cars-content .cars-side {
@@ -1014,5 +1055,42 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
 @media (max-width: 250px) {
   .contact-page-overlay .contact-content-wrapper .contact-body iframe {
     display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .header-style, .pictures-page-overlay header, .cars-page-overlay header, .publications-page-overlay header, .contact-page-overlay header {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 800px) {
+  .header-style, .pictures-page-overlay header, .cars-page-overlay header, .publications-page-overlay header, .contact-page-overlay header {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 700px) {
+  .header-style, .pictures-page-overlay header, .cars-page-overlay header, .publications-page-overlay header, .contact-page-overlay header {
+    font-size: 18px;
+  }
+  .header-style a, .pictures-page-overlay header a, .cars-page-overlay header a, .publications-page-overlay header a, .contact-page-overlay header a {
+    margin: 0 14px;
+  }
+}
+
+@media (max-width: 550px) {
+  .header-style, .pictures-page-overlay header, .cars-page-overlay header, .publications-page-overlay header, .contact-page-overlay header {
+    font-size: 18px;
+  }
+  .header-style a, .pictures-page-overlay header a, .cars-page-overlay header a, .publications-page-overlay header a, .contact-page-overlay header a {
+    margin: 0 10px;
+  }
+  .header-style .front-page-header, .pictures-page-overlay header .front-page-header, .cars-page-overlay header .front-page-header, .publications-page-overlay header .front-page-header, .contact-page-overlay header .front-page-header {
+    background: #ccc;
+  }
+  .header-style .sub-header, .pictures-page-overlay header .sub-header, .cars-page-overlay header .sub-header, .publications-page-overlay header .sub-header, .contact-page-overlay header .sub-header {
+    line-height: 50px;
+    background: red;
   }
 }
