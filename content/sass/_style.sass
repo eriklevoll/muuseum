@@ -43,16 +43,20 @@ a
   width: 100vw
   height: 0px
   padding: 50px 0
-  color: rgb(78, 77, 77)
+  color: rgb(112, 112, 112)
   font-size: 30px
   text-transform: uppercase
   font-family: $font4
   text-align: right
+  filter: blur(0.8px)
   // overflow-y: scroll
   // overflow: auto
   // overflow: initial
   a
     margin: 0 20px
+    transition: color 0.2s ease-in-out
+    &:hover
+      color: #ccc
 
 .subpage-header
   // width: auto
@@ -60,7 +64,6 @@ a
   display: flex
   .sub-header
     display: flex
-
 
 .blur-class
   filter: blur(0px)
@@ -88,6 +91,7 @@ header
       display: flex
     .nav-buttons-down
       display: flex
+
       // background: olive
     .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
       p
@@ -120,10 +124,15 @@ header
     //   font-size: 14px
     // .nav-button-five
     //   font-size: 15px
-  .nav-tib
+  .tib
     p
       font-size: 24px
     filter: blur(0.6px)
+
+  .ru
+    .nav-button-three
+      p
+        font-size: 14px
 
 .page-language
   position: absolute
@@ -214,6 +223,8 @@ header
     z-index: 2
     position: fixed
     background: rgba(0,0,0,0.8)
+  header.header-rus, .header-tib
+    filter: blur(0)
     hr
       position: absolute
       right: 0
@@ -244,6 +255,8 @@ header
         padding: 10px 0
         font-weight: bold
         margin-left: 50px
+        &#en
+          font-size: 28px
       ul
         margin-right: 50px
         font-size: 22px
@@ -314,6 +327,8 @@ header
     // height: 100px
     position: fixed
     background: rgba(0,0,0,0.8)
+  header.header-rus, .header-tib
+    filter: blur(0)
     hr
       position: absolute
       right: 0
@@ -401,6 +416,8 @@ header
     @extend .header-style
     position: fixed
     background: $header-bg
+  header.header-rus, .header-tib
+    filter: blur(0)
   .publications-body
     margin: 0
     padding: 0 50px
@@ -438,6 +455,8 @@ header
     // background: pink
     // margin-top: 200px
     padding: 50px 0
+  header.header-rus, .header-tib
+    filter: blur(0)
     // height: 100px
     // position: relative
     // display: none

@@ -299,15 +299,22 @@ a {
   width: 100vw;
   height: 0px;
   padding: 50px 0;
-  color: #4e4d4d;
+  color: #707070;
   font-size: 30px;
   text-transform: uppercase;
   font-family: "Montserrat";
   text-align: right;
+  -webkit-filter: blur(0.8px);
+          filter: blur(0.8px);
 }
 
 .header-style a, .pictures-page-overlay header a, .cars-page-overlay header a, .publications-page-overlay header a, .contact-page-overlay header a {
   margin: 0 20px;
+  transition: color 0.2s ease-in-out;
+}
+
+.header-style a:hover, .pictures-page-overlay header a:hover, .cars-page-overlay header a:hover, .publications-page-overlay header a:hover, .contact-page-overlay header a:hover {
+  color: #ccc;
 }
 
 .subpage-header {
@@ -408,13 +415,17 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
   cursor: pointer;
 }
 
-header .nav-tib {
+header .tib {
   -webkit-filter: blur(0.6px);
           filter: blur(0.6px);
 }
 
-header .nav-tib p {
+header .tib p {
   font-size: 24px;
+}
+
+header .ru .nav-button-three p {
+  font-size: 14px;
 }
 
 .page-language {
@@ -518,7 +529,12 @@ header .nav-tib p {
   background: rgba(0, 0, 0, 0.8);
 }
 
-.pictures-page-overlay header hr, .cars-page-overlay header hr {
+.pictures-page-overlay header.header-rus, .cars-page-overlay header.header-rus, .pictures-page-overlay .header-tib, .cars-page-overlay .header-tib {
+  -webkit-filter: blur(0);
+          filter: blur(0);
+}
+
+.pictures-page-overlay header.header-rus hr, .cars-page-overlay header.header-rus hr, .pictures-page-overlay .header-tib hr, .cars-page-overlay .header-tib hr {
   position: absolute;
   right: 0;
   margin: 0;
@@ -563,6 +579,10 @@ header .nav-tib p {
   padding: 10px 0;
   font-weight: bold;
   margin-left: 50px;
+}
+
+.pictures-page-overlay .pictures-content .pictures-side h2#en, .cars-page-overlay .pictures-content .pictures-side h2#en, .cars-page-overlay .cars-content .pictures-side h2#en, .cars-page-overlay .cars-content .cars-side h2#en {
+  font-size: 28px;
 }
 
 .pictures-page-overlay .pictures-content .pictures-side ul, .cars-page-overlay .pictures-content .pictures-side ul, .cars-page-overlay .cars-content .pictures-side ul, .cars-page-overlay .cars-content .cars-side ul {
@@ -658,7 +678,12 @@ header .nav-tib p {
   background: rgba(0, 0, 0, 0.8);
 }
 
-.cars-page-overlay header hr {
+.cars-page-overlay header.header-rus, .cars-page-overlay .header-tib {
+  -webkit-filter: blur(0);
+          filter: blur(0);
+}
+
+.cars-page-overlay header.header-rus hr, .cars-page-overlay .header-tib hr {
   position: absolute;
   right: 0;
   margin: 0;
@@ -761,6 +786,11 @@ header .nav-tib p {
   background: rgba(0, 0, 0, 0.8);
 }
 
+.publications-page-overlay header.header-rus, .publications-page-overlay .header-tib {
+  -webkit-filter: blur(0);
+          filter: blur(0);
+}
+
 .publications-page-overlay .publications-body {
   margin: 0;
   padding: 0 50px;
@@ -801,6 +831,11 @@ header .nav-tib p {
 
 .contact-page-overlay header {
   padding: 50px 0;
+}
+
+.contact-page-overlay header.header-rus, .contact-page-overlay .header-tib {
+  -webkit-filter: blur(0);
+          filter: blur(0);
 }
 
 .contact-page-overlay .contact-content-wrapper {
@@ -1101,25 +1136,7 @@ header .nav-tib p {
   }
 }
 
-@media (max-width: 900px) {
-  .header-style, .pictures-page-overlay header, .cars-page-overlay header, .publications-page-overlay header, .contact-page-overlay header {
-    font-size: 26px;
-  }
-}
-
-@media (max-width: 800px) {
-  .header-style, .pictures-page-overlay header, .cars-page-overlay header, .publications-page-overlay header, .contact-page-overlay header {
-    font-size: 22px;
-  }
-}
-
 @media (max-width: 700px) {
-  .header-style, .pictures-page-overlay header, .cars-page-overlay header, .publications-page-overlay header, .contact-page-overlay header {
-    font-size: 18px;
-  }
-  .header-style a, .pictures-page-overlay header a, .cars-page-overlay header a, .publications-page-overlay header a, .contact-page-overlay header a {
-    margin: 0 14px;
-  }
   .publications-page-overlay .publications-body {
     padding: 0;
   }
@@ -1163,5 +1180,99 @@ header .nav-tib p {
   }
   .pictures-page-overlay .pictures-content .pictures-body, .cars-page-overlay .pictures-content .pictures-body, .cars-page-overlay .cars-content .pictures-body, .cars-page-overlay .cars-content .cars-body, .contact-page-overlay .pictures-content .pictures-body, .contact-page-overlay .cars-page-overlay .cars-content .pictures-body, .cars-page-overlay .contact-page-overlay .cars-content .pictures-body, .cars-page-overlay .cars-content .contact-page-overlay .pictures-content .cars-body, .contact-page-overlay .cars-page-overlay .cars-content .cars-body, .cars-page-overlay .contact-page-overlay .cars-content .cars-body, .publications-page-overlay .pictures-content .pictures-body, .publications-page-overlay .cars-page-overlay .cars-content .pictures-body, .cars-page-overlay .publications-page-overlay .cars-content .pictures-body, .cars-page-overlay .cars-content .publications-page-overlay .pictures-content .cars-body, .publications-page-overlay .cars-page-overlay .cars-content .cars-body, .cars-page-overlay .publications-page-overlay .cars-content .cars-body, .cars-page-overlay .pictures-content .pictures-body, .cars-page-overlay .cars-content .pictures-body, .cars-page-overlay .cars-content .cars-body {
     margin-top: 50px;
+  }
+}
+
+@media (max-width: 1000px) {
+  header.header-en, header.header-est {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 900px) {
+  header.header-en {
+    font-size: 22px;
+  }
+  header.header-en a {
+    margin: 0 15px;
+  }
+}
+
+@media (max-width: 800px) {
+  header.header-est, header.header-rus {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 700px) {
+  header.header-est, header.header-rus {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 750px) {
+  header.header-en, header.header-est {
+    font-size: 20px;
+  }
+  header.header-en a, header.header-est a {
+    margin: 0 8px;
+  }
+}
+
+@media (max-width: 650px) {
+  header.header-en, header.header-est, header.header-rus {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    padding: 50px 0;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  header.header-en .subpage-header a, header.header-est .subpage-header a, header.header-rus .subpage-header a {
+    margin: 0 50px;
+  }
+  header.header-en .subpage-header .front-page-header, header.header-est .subpage-header .front-page-header, header.header-rus .subpage-header .front-page-header {
+    width: 100vw;
+    height: 100px;
+    text-align: left;
+    line-height: 100px;
+    font-size: 30px;
+  }
+  header.header-en .subpage-header .sub-header, header.header-est .subpage-header .sub-header, header.header-rus .subpage-header .sub-header {
+    display: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .pictures-page-overlay header, .cars-page-overlay header, .contact-page-overlay header, .publications-page-overlay header, .cars-page-overlay header {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    padding: 25px 0;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  .pictures-page-overlay header .subpage-header, .cars-page-overlay header .subpage-header, .contact-page-overlay header .subpage-header, .publications-page-overlay header .subpage-header, .cars-page-overlay header .subpage-header {
+    font-size: 18px;
+  }
+  .pictures-page-overlay header .subpage-header a, .cars-page-overlay header .subpage-header a, .contact-page-overlay header .subpage-header a, .publications-page-overlay header .subpage-header a, .cars-page-overlay header .subpage-header a {
+    margin: 0 50px;
+  }
+  .pictures-page-overlay header .subpage-header .front-page-header, .cars-page-overlay header .subpage-header .front-page-header, .contact-page-overlay header .subpage-header .front-page-header, .publications-page-overlay header .subpage-header .front-page-header, .cars-page-overlay header .subpage-header .front-page-header {
+    width: 100vw;
+    height: 60px;
+    text-align: left;
+    line-height: 60px;
+    font-size: 30px;
+  }
+  .pictures-page-overlay header .subpage-header .sub-header, .cars-page-overlay header .subpage-header .sub-header, .contact-page-overlay header .subpage-header .sub-header, .publications-page-overlay header .subpage-header .sub-header, .cars-page-overlay header .subpage-header .sub-header {
+    display: none;
+  }
+  .pictures-page-overlay .pictures-content .pictures-body, .cars-page-overlay .pictures-content .pictures-body, .cars-page-overlay .cars-content .pictures-body, .cars-page-overlay .cars-content .cars-body, .contact-page-overlay .pictures-content .pictures-body, .contact-page-overlay .cars-page-overlay .cars-content .pictures-body, .cars-page-overlay .contact-page-overlay .cars-content .pictures-body, .cars-page-overlay .cars-content .contact-page-overlay .pictures-content .cars-body, .contact-page-overlay .cars-page-overlay .cars-content .cars-body, .cars-page-overlay .contact-page-overlay .cars-content .cars-body, .publications-page-overlay .pictures-content .pictures-body, .publications-page-overlay .cars-page-overlay .cars-content .pictures-body, .cars-page-overlay .publications-page-overlay .cars-content .pictures-body, .cars-page-overlay .cars-content .publications-page-overlay .pictures-content .cars-body, .publications-page-overlay .cars-page-overlay .cars-content .cars-body, .cars-page-overlay .publications-page-overlay .cars-content .cars-body, .cars-page-overlay .pictures-content .pictures-body, .cars-page-overlay .cars-content .pictures-body, .cars-page-overlay .cars-content .cars-body {
+    margin-top: 60px;
   }
 }

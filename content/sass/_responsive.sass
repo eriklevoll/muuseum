@@ -149,19 +149,19 @@
         iframe
           display: none
 
-@media (max-width: 900px)
-  .header-style
-    font-size: 26px
+// @media (max-width: 900px)
+//   .header-style
+//     font-size: 26px
 
-@media (max-width: 800px)
-  .header-style
-    font-size: 22px
+// @media (max-width: 800px)
+//   .header-style
+//     font-size: 22px
 
 @media (max-width: 700px)
-  .header-style
-    font-size: 18px
-    a
-      margin: 0 14px
+  // .header-style
+  //   font-size: 18px
+  //   a
+  //     margin: 0 14px
   .publications-page-overlay
     .publications-body
       padding: 0
@@ -220,3 +220,81 @@
       // a
         // padding: 50px
       // height: 100px
+
+@media (max-width: 1300px)
+  header.header-en
+    // font-size: 26px
+
+@media (max-width: 1150px)
+  header.header-en
+    // font-size: 22px
+    // color: rgb(85, 84, 84)
+    // filter: blur(0.7px)
+
+@media (max-width: 1000px)
+  header.header-en, header.header-est
+    font-size: 26px
+    // a
+    //   margin: 0 12px
+
+@media (max-width: 900px)
+  header.header-en
+    font-size: 22px
+    a
+      margin: 0 15px
+
+@media (max-width: 800px)
+  header.header-est, header.header-rus
+    font-size: 24px
+
+@media (max-width: 700px)
+  header.header-est, header.header-rus
+    font-size: 22px
+
+@media (max-width: 750px)
+  header.header-en, header.header-est
+    font-size: 20px
+    a
+      margin: 0 8px
+
+@media (max-width: 650px)
+  header.header-en, header.header-est, header.header-rus
+    display: flex
+    justify-content: flex-end
+    padding: 50px 0
+    background: $header-bg
+    .subpage-header
+      a
+        margin: 0 50px
+      .front-page-header
+        width: 100vw
+        height: 100px
+        text-align: left
+        line-height: 100px
+        font-size: 30px
+      .sub-header
+        display: none
+
+
+@media (max-width: 550px)
+  .pictures-page-overlay, .contact-page-overlay, .publications-page-overlay, .cars-page-overlay
+    header
+      display: flex
+      justify-content: flex-end
+      padding: 25px 0
+      background: $header-bg
+      .subpage-header
+        font-size: 18px
+        a
+          margin: 0 50px
+        .front-page-header
+          width: 100vw
+          height: 60px
+          text-align: left
+          line-height: 60px
+          font-size: 30px
+        .sub-header
+          display: none
+    .pictures-content
+      .pictures-body
+        margin-top: 60px
