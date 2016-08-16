@@ -408,6 +408,15 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
   cursor: pointer;
 }
 
+header .nav-tib {
+  -webkit-filter: blur(0.6px);
+          filter: blur(0.6px);
+}
+
+header .nav-tib p {
+  font-size: 24px;
+}
+
 .page-language {
   position: absolute;
   top: 5px;
@@ -617,6 +626,7 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
 }
 
 .pictures-page-overlay .pictures-content .pictures-body .col1 img, .cars-page-overlay .pictures-content .pictures-body .col1 img, .cars-page-overlay .cars-content .pictures-body .col1 img, .cars-page-overlay .cars-content .cars-body .col1 img, .pictures-page-overlay .pictures-content .pictures-body .col2 img, .cars-page-overlay .pictures-content .pictures-body .col2 img, .cars-page-overlay .cars-content .pictures-body .col2 img, .cars-page-overlay .cars-content .cars-body .col2 img, .pictures-page-overlay .pictures-content .pictures-body .col3 img, .cars-page-overlay .pictures-content .pictures-body .col3 img, .cars-page-overlay .cars-content .pictures-body .col3 img, .cars-page-overlay .cars-content .cars-body .col3 img, .pictures-page-overlay .pictures-content .pictures-body .col4 img, .cars-page-overlay .pictures-content .pictures-body .col4 img, .cars-page-overlay .cars-content .pictures-body .col4 img, .cars-page-overlay .cars-content .cars-body .col4 img, .pictures-page-overlay .pictures-content .pictures-body .col5 img, .cars-page-overlay .pictures-content .pictures-body .col5 img, .cars-page-overlay .cars-content .pictures-body .col5 img, .cars-page-overlay .cars-content .cars-body .col5 img {
+  cursor: pointer;
   width: 100%;
   display: block;
   height: auto;
