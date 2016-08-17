@@ -241,20 +241,6 @@ th {
 }
 
 @font-face {
-  font-family: 'timwn';
-  src: url("/content/timwn/timwn.ttf") format("truetype");
-  src: url("/content/timwn/timwn1.ttf") format("truetype");
-  src: url("/content/timwn/timwn2.ttf") format("truetype");
-  src: url("/content/timwn/timwn3.ttf") format("truetype");
-  src: url("/content/timwn/timwn4.ttf") format("truetype");
-  src: url("/content/timwn/timwn5.ttf") format("truetype");
-  src: url("/content/timwn/timwn6.ttf") format("truetype");
-  src: url("/content/timwn/timwn7.ttf") format("truetype");
-  src: url("/content/timwn/timwn8.ttf") format("truetype");
-  src: url("/content/timwn/timwn9.ttf") format("truetype");
-}
-
-@font-face {
   font-family: 'TibetanUnicode';
   src: url("content/TibetanUnicode/TibetanUnicode.ttf") format("truetype");
 }
