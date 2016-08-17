@@ -240,6 +240,25 @@ th {
   padding: 0;
 }
 
+@font-face {
+  font-family: 'timwn';
+  src: url("/content/timwn/timwn.ttf") format("truetype");
+  src: url("/content/timwn/timwn1.ttf") format("truetype");
+  src: url("/content/timwn/timwn2.ttf") format("truetype");
+  src: url("/content/timwn/timwn3.ttf") format("truetype");
+  src: url("/content/timwn/timwn4.ttf") format("truetype");
+  src: url("/content/timwn/timwn5.ttf") format("truetype");
+  src: url("/content/timwn/timwn6.ttf") format("truetype");
+  src: url("/content/timwn/timwn7.ttf") format("truetype");
+  src: url("/content/timwn/timwn8.ttf") format("truetype");
+  src: url("/content/timwn/timwn9.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'TibetanUnicode';
+  src: url("content/TibetanUnicode/TibetanUnicode.ttf") format("truetype");
+}
+
 body, html {
   margin: 0;
   padding: 0;
@@ -250,6 +269,15 @@ body, html {
           user-select: none;
   cursor: default;
   overflow: hidden;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body.tib {
+  font-family: 'TibetanUnicode' !important;
 }
 
 a:visited, a:active, a:link, a:hover {
@@ -315,6 +343,10 @@ a {
 
 .header-style a:hover, .pictures-page-overlay header a:hover, .cars-page-overlay header a:hover, .publications-page-overlay header a:hover, .contact-page-overlay header a:hover {
   color: #ccc;
+}
+
+.header-style a.tib, .pictures-page-overlay header a.tib, .cars-page-overlay header a.tib, .publications-page-overlay header a.tib, .contact-page-overlay header a.tib {
+  font-family: 'TibetanUnicode';
 }
 
 .subpage-header {
@@ -415,13 +447,19 @@ header .nav-buttons-wrapper .nav-button-one:hover, header .nav-buttons-wrapper .
   cursor: pointer;
 }
 
-header .tib {
-  -webkit-filter: blur(0.6px);
-          filter: blur(0.6px);
+header .tib .nav-button-one, header .tib .nav-button-two, header .tib .nav-button-three, header .tib .nav-button-four, header .tib .nav-button-five, header .tib .nav-button-six {
+  -webkit-filter: blur(0);
+          filter: blur(0);
 }
 
-header .tib p {
+header .tib .nav-button-one p, header .tib .nav-button-two p, header .tib .nav-button-three p, header .tib .nav-button-four p, header .tib .nav-button-five p, header .tib .nav-button-six p {
   font-size: 24px;
+  font-family: 'TibetanUnicode';
+}
+
+header .tib .nav-button-one:hover, header .tib .nav-button-two:hover, header .tib .nav-button-three:hover, header .tib .nav-button-four:hover, header .tib .nav-button-five:hover, header .tib .nav-button-six:hover {
+  -webkit-filter: blur(0);
+          filter: blur(0);
 }
 
 header .ru .nav-button-three p {

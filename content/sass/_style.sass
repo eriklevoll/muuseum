@@ -5,6 +5,15 @@ body, html
   user-select: none
   cursor: default
   overflow: hidden
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+body.tib
+  font-family: 'TibetanUnicode' !important
 
 a:visited, a:active, a:link, a:hover
   text-decoration: none
@@ -57,6 +66,8 @@ a
     transition: color 0.2s ease-in-out
     &:hover
       color: #ccc
+  a.tib
+    font-family: 'TibetanUnicode'
 
 .subpage-header
   // width: auto
@@ -125,9 +136,14 @@ header
     // .nav-button-five
     //   font-size: 15px
   .tib
-    p
-      font-size: 24px
-    filter: blur(0.6px)
+    .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
+      p
+        font-size: 24px
+        font-family: 'TibetanUnicode'
+      filter: blur(0)
+      &:hover
+        filter: blur(0)
+
 
   .ru
     .nav-button-three
