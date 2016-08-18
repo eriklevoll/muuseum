@@ -2,9 +2,10 @@ body, html
   margin: 0
   padding: 0
   background: black
-  user-select: none
   cursor: default
   overflow: hidden
+
+.no-select
   -webkit-touch-callout: none
   -webkit-user-select: none
   -khtml-user-select: none
@@ -49,6 +50,7 @@ a
 
 
 .header-style
+  @extend .no-select
   width: 100vw
   height: 0px
   padding: 50px 0
@@ -80,6 +82,7 @@ a
   filter: blur(0px)
 
 header
+  @extend .no-select
   display: flex
   justify-content: center
   align-items: center
@@ -151,6 +154,7 @@ header
         font-size: 14px
 
 .page-language
+  @extend .no-select
   position: absolute
   top: 5px
   right: 10px
@@ -209,6 +213,7 @@ header
   display: none
 
 .page-logo
+  @extend .no-select
   position: fixed
   left: 15px
   top: 5px
@@ -226,13 +231,14 @@ header
   // opacity: (0.50)
   background-size: contain
   transition: all .25s ease-in-out
-  &:hover
-    // background: #ccc
-    opacity: (0.55)
-    cursor: pointer
+  // &:hover
+  //   // background: #ccc
+  //   opacity: (0.55)
+  //   cursor: pointer
 
 
 .pictures-page-overlay
+  @extend .no-select
   @extend .overlay-class
   flex-direction: column
   // overflow-x: hidden
@@ -340,6 +346,7 @@ header
       .col5
         width: 20%
 .cars-page-overlay
+  @extend .no-select
   @extend .pictures-page-overlay
   // display: flex
   header
@@ -463,6 +470,13 @@ header
       color: #b6b6b6
       &:last-child
         margin-bottom: 100px
+      display: flex
+      align-items: center
+      .publication-pdf
+        @extend .download-image
+        background-repeat: no-repeat
+        padding-right: 10px
+
 .contact-page-overlay
   @extend .overlay-class
   flex-flow: column nowrap
@@ -484,6 +498,7 @@ header
     // height: 3000px
     // display: flex
     .contact-side
+      @extend .no-select
       position: fixed
       left: 0
       filter: blur(0.55px)
@@ -572,14 +587,15 @@ header
                 font-style: italic
                 color: #9d9a9a
                 margin: 0 25px 0 10px
-              .download-image
-                float: left
-                margin: 0
-                display: block
-                width: 28px
-                height: 28px
-                background-image: url("content/images/acrobat_icon.png")
-                background-size: contain
+.download-image
+  @extend .no-select
+  float: left
+  margin: 0
+  display: block
+  width: 26px
+  height: 26px
+  background-image: url("content/images/acrobat_icon.png")
+  background-size: contain
 
 .picture-large-overlay
   @extend .overlay-class

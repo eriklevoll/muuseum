@@ -250,12 +250,11 @@ body, html {
   margin: 0;
   padding: 0;
   background: black;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   cursor: default;
   overflow: hidden;
+}
+
+.no-select, .header-style, .pictures-page-overlay header, .cars-page-overlay header, .publications-page-overlay header, .contact-page-overlay header, header, .page-language, .page-logo, .pictures-page-overlay, .cars-page-overlay, .contact-page-overlay .contact-content-wrapper .contact-side, .download-image, .publications-page-overlay .publications-body a .publication-pdf {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -543,11 +542,6 @@ header .ru .nav-button-three p {
   background-position: center;
   background-size: contain;
   transition: all .25s ease-in-out;
-}
-
-.page-logo:hover {
-  opacity: 0.55;
-  cursor: pointer;
 }
 
 .pictures-page-overlay, .cars-page-overlay {
@@ -850,10 +844,21 @@ header .ru .nav-button-three p {
   padding: 0 80px;
   background: #022b30;
   color: #b6b6b6;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .publications-page-overlay .publications-body a:last-child {
   margin-bottom: 100px;
+}
+
+.publications-page-overlay .publications-body a .publication-pdf {
+  background-repeat: no-repeat;
+  padding-right: 10px;
 }
 
 .contact-page-overlay {
@@ -997,12 +1002,12 @@ header .ru .nav-button-three p {
   margin: 0 25px 0 10px;
 }
 
-.contact-page-overlay .contact-content-wrapper .contact-body section#documents article .document-download a .download-image {
+.download-image, .publications-page-overlay .publications-body a .publication-pdf {
   float: left;
   margin: 0;
   display: block;
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   background-image: url("content/images/acrobat_icon.png");
   background-size: contain;
 }
