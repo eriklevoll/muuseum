@@ -4,6 +4,7 @@
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display+SC);
 @import url(https://fonts.googleapis.com/css?family=Ovo);
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -492,6 +493,14 @@ header .ru .nav-button-three p {
   text-align: center;
 }
 
+.page-language .language-tib {
+  font-size: 20px;
+}
+
+.page-language .language-est, .page-language .language-eng, .page-language .language-rus {
+  font-family: sans-serif;
+}
+
 .page-language .language-est {
   background-image: url("content/images/ee.gif");
 }
@@ -821,6 +830,7 @@ header .ru .nav-button-three p {
   font-weight: 400;
   color: white;
   font-family: "Montserrat", serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .publications-page-overlay .publications-body p {
@@ -829,17 +839,16 @@ header .ru .nav-button-three p {
   line-height: 50px;
   padding: 0 50px;
   margin-top: 10px;
-  background: #021d21;
+  background: #033b44;
 }
 
 .publications-page-overlay .publications-body a {
   display: block;
   margin-bottom: 2px;
-  background: green;
   min-height: 30px;
   line-height: 30px;
   padding: 0 80px;
-  background: #010f11;
+  background: #022b30;
   color: #b6b6b6;
 }
 
@@ -896,7 +905,7 @@ header .ru .nav-button-three p {
 }
 
 .contact-page-overlay .contact-content-wrapper .contact-side ul li {
-  padding: 7px 50px;
+  padding: 7px 20px 7px 50px;
   transition: all .25s ease-in-out;
   z-index: 20;
 }
@@ -943,6 +952,7 @@ header .ru .nav-button-three p {
   padding-top: 15px;
   background: #011012;
   color: #cbcaca;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .contact-page-overlay .contact-content-wrapper .contact-body section#contact .contact-section-wrapper {
@@ -969,6 +979,10 @@ header .ru .nav-button-three p {
 
 .contact-page-overlay .contact-content-wrapper .contact-body section#documents article .document-download {
   margin-bottom: 5px;
+}
+
+.contact-page-overlay .contact-content-wrapper .contact-body section#documents article .document-download span.download-title-tib {
+  font-family: 'TibetanUnicode';
 }
 
 .contact-page-overlay .contact-content-wrapper .contact-body section#documents article .document-download a {

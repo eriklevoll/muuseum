@@ -181,6 +181,10 @@ header
       top: 120%
       // background: green
       text-align: center
+  .language-tib
+    font-size: 20px
+  .language-est, .language-eng, .language-rus
+    font-family: sans-serif
       // left: 0
   .language-est
     background-image: url("content/images/ee.gif")
@@ -438,26 +442,24 @@ header
     margin: 0
     padding: 0 50px
     font-weight: 400
-    // height: 100px
-    // width: 100px
     color: white
     font-family: $font4, serif
+    font-family: 'Open Sans', sans-serif
     p
       background: red
       min-height: 50px
       line-height: 50px
       padding: 0 50px
       margin-top: 10px
-      background: $section-header
+      background: $section-header-light
     a
       display: block
       margin-bottom: 2px
-      background: green
       min-height: 30px
       line-height: 30px
       padding: 0 80px
       // margin-bottom: 10px
-      background: $section-article-dark
+      background: $section-article-light
       color: #b6b6b6
       &:last-child
         margin-bottom: 100px
@@ -510,7 +512,8 @@ header
         width: 250px
         // height: 900px
         li
-          padding: 7px 50px
+          padding: 7px 20px 7px 50px
+          // background: red
           transition: all .25s ease-in-out
           z-index: 20
           &:hover
@@ -541,6 +544,7 @@ header
           padding-top: 15px
           background: $section-article
           color: $main-text-color
+          font-family: 'Open Sans', sans-serif
       section#contact
         .contact-section-wrapper
           display: flex
@@ -558,6 +562,8 @@ header
         article
           .document-download
             margin-bottom: 5px
+            span.download-title-tib
+              font-family: 'TibetanUnicode'
             a
               line-height: 28px
               display: inline-block
