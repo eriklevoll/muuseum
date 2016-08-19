@@ -64,26 +64,6 @@
   var len_current = currentNumbers  - parseInt(currentExclude.length);
   var lens        = [len_tsar,len_german,len_est,len_soviet,len_current];
 
-var expositionNumbers = [
-    "1","2","3","4","5","6",
-    "7","9","10","11","12",
-    "13","14","15","16","17","18",
-    "19","20","21","22","23","24",
-    "25","26","28","29","30",
-    "31","32","33","34","35","36",
-    "42",
-    "44","45","46","47","48",
-    "49","50","51","52","53","54",
-    "55","56"
-  ];
-
-var eventsNumbers = [
-    "1","2","3","4","5","6",
-    "7","8","9","10","11","12",
-    "13","14","18",
-    "19","20","21","22","23","24",
-    "25","26","27","28","29"
-  ];
 
 
   var pageLogo        = $('.page-logo');
@@ -120,8 +100,6 @@ var eventsNumbers = [
       children.eq(i%cols_count).append('<img src="/content/images/ajastud/'+ folder +'/IMG_' + zeros + i + '.jpg"/>');
     }
   };
-
-
 
 
   var fixWidths = function() {
@@ -169,9 +147,6 @@ var eventsNumbers = [
 
   sideNavUl.children().on('click', function() {
     var children = picturesBody.children();
-    // children.each(function() {
-    //   console.log($(this).height());
-    // });
     if ($(this).hasClass('.active')) return;
     $(this).siblings().css({'background':'none'});
     period = $(this).attr('data-title');
@@ -183,7 +158,7 @@ var eventsNumbers = [
     $(this).addClass('.active');
   });
 
-  picturesOverlay.scroll(function(){
+  picturesBody.scroll(function(){
     var currentTop = $(this).scrollTop();
     if (currentTop <= 100) {
       var opac = String(1-currentTop*0.01);
@@ -210,11 +185,8 @@ var eventsNumbers = [
       'background': 'url('+ source +') no-repeat center center',
       'background-size': 'contain'
     });
-    // largePicContainer.append('<img src="' + source + '"/>' )
-    console.log($(this)[0]);
     var imgWidth = $(this).width();
     var loc_left = $(this).position().left;
-    console.log(loc_left + imgWidth);
     closeBtn.css({
       'left:':  loc_left + imgWidth +'px !important'
     })
@@ -236,22 +208,22 @@ var eventsNumbers = [
       return $(this).css('display') !== 'none';
     }).length;
     if (prev_cols_count != cols_count) {
-      console.log(prev_cols_count);
-      console.log(cols_count);
       distributePictureCols(period);
       imgLoaded(lens[period]);
     }
   };
 
-  distributePictureCols(period);
-  imgLoaded(lens[period]);
+  $(document).ready(function() {
+    distributePictureCols(period);
+    imgLoaded(lens[period]);
+  });
 
   var resizeTimer;
   $(window).on('resize', function(e) {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function() {
       checkColsChanged();
-    }, 200);
+    }, 50);
   });
 
 })(jQuery);

@@ -123,14 +123,16 @@
     }
   };
 
-  distCols(1);
-  imgLoaded(len_exp);
+  $(document).ready(function() {
+    distCols(1);
+    imgLoaded(len_exp);
+  });
 
   var resizeTimer;
   $(window).on('resize', function(e) {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function() {
       checkColsChanged();
-    }, 200);
+    }, 50);
   });
 })(jQuery);

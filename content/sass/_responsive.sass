@@ -115,19 +115,16 @@
       .contact-body
         section#contact
           .contact-section-wrapper
-            flex-direction: column-reverse
+            display: block
             article
-              margin: 5px 1px
-              width: 100%
+              width: auto
             iframe
               width: 100%
+              padding: 0              
 
 @media (max-width: 750px)
   .contact-page-overlay
     header.contact-header
-      // padding-top: 70px
-      // padding: 70px 0 40px 0
-      // height: 70px
       p
         padding-bottom: 0
         margin-bottom: 0
@@ -189,13 +186,15 @@
           width: 100vw
           height: 60px
           text-align: left
-          line-height: 60px
+          // line-height: 60px
           font-size: 30px
         .sub-header
           display: none
-    .pictures-content
-      .pictures-body
-        margin-top: 50px
+    .contact-content-wrapper
+      .contact-body
+        // background: red
+        // margin-top: 50px
+        // margin-top: 50px
   // .header-style
     // align-items: center
     // font-size: 18px
@@ -252,7 +251,11 @@
     font-size: 22px
 
 @media (max-width: 750px)
-  header.header-en, header.header-est
+  header.header-est
+    font-size: 24px
+    a
+      margin: 0 8px
+  header.header-en
     font-size: 20px
     a
       margin: 0 8px
@@ -261,16 +264,16 @@
   header.header-en, header.header-est, header.header-rus
     display: flex
     justify-content: flex-end
-    padding: 50px 0
+    // padding: 50px 0
     background: $header-bg
     .subpage-header
       a
         margin: 0 50px
       .front-page-header
         width: 100vw
-        height: 100px
+        // height: 100px
         text-align: left
-        line-height: 100px
+        // line-height: 100px
         font-size: 30px
       .sub-header
         display: none
@@ -278,6 +281,10 @@
 
 @media (max-width: 550px)
   .pictures-page-overlay, .contact-page-overlay, .publications-page-overlay, .cars-page-overlay
+    .contact-content-wrapper
+      margin-top: 80px
+    section.publications-content
+      margin-top: 80px
     header
       display: flex
       justify-content: flex-end
@@ -289,12 +296,12 @@
           margin: 0 50px
         .front-page-header
           width: 100vw
-          height: 60px
+          // height: 60px
           text-align: left
-          line-height: 60px
+          // line-height: 60px
           font-size: 30px
         .sub-header
           display: none
     .pictures-content
       .pictures-body
-        margin-top: 60px
+        margin-top: 80px
