@@ -135,17 +135,13 @@ header.main-header
         transform: scale(1.2)
         background: rgba(0, 0, 0, 0.5)
         cursor: pointer
-        // filter: blur(0px)
-    // .nav-button-one
-    //   font-size: 14px
-    // .nav-button-five
-    //   font-size: 15px
   .tib
+    filter: blur(0)
     .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
       p
         font-size: 24px
         font-family: 'TibetanUnicode'
-      filter: blur(0)
+
       &:hover
         filter: blur(0)
 
@@ -469,10 +465,12 @@ header.main-header
     p
       background: red
       min-height: 50px
-      line-height: 50px
+      line-height: 45px
       padding: 0 50px
       margin-top: 10px
       background: $section-header-light
+      display: flex
+      align-items: center
     a
       display: block
       margin-bottom: 2px

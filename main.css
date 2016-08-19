@@ -439,7 +439,7 @@ header.main-header .nav-buttons-wrapper .nav-button-one:hover, header.main-heade
   cursor: pointer;
 }
 
-header.main-header .tib .nav-button-one, header.main-header .tib .nav-button-two, header.main-header .tib .nav-button-three, header.main-header .tib .nav-button-four, header.main-header .tib .nav-button-five, header.main-header .tib .nav-button-six {
+header.main-header .tib {
   -webkit-filter: blur(0);
           filter: blur(0);
 }
@@ -838,10 +838,16 @@ header.main-header .ru .nav-button-three p {
 .publications-page-overlay .publications-body p {
   background: red;
   min-height: 50px;
-  line-height: 50px;
+  line-height: 45px;
   padding: 0 50px;
   margin-top: 10px;
   background: #033b44;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .publications-page-overlay .publications-body a {
