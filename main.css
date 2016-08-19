@@ -1089,26 +1089,26 @@ header.main-header .ru .nav-button-three p {
 }
 
 @media (max-width: 630px) {
-  body header .nav-buttons-wrapper {
+  body header.main-header .nav-buttons-wrapper {
     padding: 0;
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
-  body header .nav-buttons-wrapper .nav-button-one, body header .nav-buttons-wrapper .nav-button-two, body header .nav-buttons-wrapper .nav-button-three, body header .nav-buttons-wrapper .nav-button-four, body header .nav-buttons-wrapper .nav-button-five, body header .nav-buttons-wrapper .nav-button-six {
+  body header.main-header .nav-buttons-wrapper .nav-button-one, body header.main-header .nav-buttons-wrapper .nav-button-two, body header.main-header .nav-buttons-wrapper .nav-button-three, body header.main-header .nav-buttons-wrapper .nav-button-four, body header.main-header .nav-buttons-wrapper .nav-button-five, body header.main-header .nav-buttons-wrapper .nav-button-six {
     margin: 15px 15px;
   }
 }
 
 @media (max-width: 385px) {
-  body header .nav-buttons-wrapper {
+  body header.main-header .nav-buttons-wrapper {
     width: 100%;
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     margin: 15vh 0 0 0;
   }
-  body header .nav-buttons-wrapper .nav-buttons-up, body header .nav-buttons-wrapper .nav-buttons-down {
+  body header.main-header .nav-buttons-wrapper .nav-buttons-up, body header.main-header .nav-buttons-wrapper .nav-buttons-down {
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
@@ -1116,19 +1116,19 @@ header.main-header .ru .nav-button-three p {
         -ms-flex-align: center;
             align-items: center;
   }
-  body header .nav-buttons-wrapper .nav-buttons-up div, body header .nav-buttons-wrapper .nav-buttons-down div {
+  body header.main-header .nav-buttons-wrapper .nav-buttons-up div, body header.main-header .nav-buttons-wrapper .nav-buttons-down div {
     width: 98vw;
     height: 20vh;
     border-radius: 0;
     margin: 2px;
     transition: none;
   }
-  body header .nav-buttons-wrapper .nav-buttons-up div:hover, body header .nav-buttons-wrapper .nav-buttons-down div:hover {
+  body header.main-header .nav-buttons-wrapper .nav-buttons-up div:hover, body header.main-header .nav-buttons-wrapper .nav-buttons-down div:hover {
     -webkit-transform: none;
         -ms-transform: none;
             transform: none;
   }
-  body header .nav-buttons-wrapper .nav-buttons-up div p.en, body header .nav-buttons-wrapper .nav-buttons-down div p.en {
+  body header.main-header .nav-buttons-wrapper .nav-buttons-up div p.en, body header.main-header .nav-buttons-wrapper .nav-buttons-down div p.en {
     font-size: 16px;
   }
 }
