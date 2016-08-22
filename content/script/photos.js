@@ -39,7 +39,7 @@
   var germanPerct_2 = [44.910,56.290]
 
 
-  var currentNumbers = 38;
+  var currentNumbers = 41;
   var currentExclude = [];
   var currentPerct_5 = [19.837,19.863,17.717,20.470,22.750]
   var currentPerct_4 = [23.004,23.022,27.042,27.618]
@@ -174,13 +174,10 @@
   picturesBody.children().on('click','img', function() {
     var windowWidth = $(window).width();
     if (windowWidth <= 750) {
-      console.log('ei');
       return;
     }
     var closeBtn = largePicContainer.find('.large-picture-close');
     var source = $(this).attr('src');
-    console.log(closeBtn);
-    // closeBtn.css({'background': 'red'});
     largePicContainer.css({
       'background': 'url('+ source +') no-repeat center center',
       'background-size': 'contain'

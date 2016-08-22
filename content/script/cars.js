@@ -1,26 +1,13 @@
 (function($) {
   var eventNumbers = 29;
   var eventExclude = [0,15,16,17];
-  var eventPerct_5 = [10,10,10,10,10];
-  var eventPerct_4 = [10,10,10,10];
-  var eventPerct_3 = [10,10,10];
-  var eventPerct_2 = [10,10];
-  var Perct_1      = [100];
 
-  var expositionNumbers = 56;
-  var expositionExclude = [0,8,27,37,38,43,41,39,40];
-  var expositionPerct_5 = [20.072,18.872,20.101,22.196,19.052];
-  var expositionPerct_4 = [10,10,10,10];
-  var expositionPerct_3 = [10,10,10];
-  var expositionPerct_2 = [10,10];
-
-  var eventColWidths        = [Perct_1,eventPerct_2,eventPerct_3,eventPerct_4,eventPerct_5];
-  var expositionColWidths   = [Perct_1,expositionPerct_2,expositionPerct_3,expositionPerct_4,expositionPerct_5];
+  var expositionNumbers = 76;
+  var expositionExclude = [0,24,62,57,27,37,38,61,43,23,41,63,40,58,8,39,59,55,64];
 
   var expNames     = ['events', 'ekspositsioon'];
   var expNumbers   = [eventNumbers, expositionNumbers];
   var expExcludes  = [eventExclude, expositionExclude];
-  var expPercents  = [eventColWidths, expositionColWidths];
 
   var len_exp   = expositionNumbers - parseInt(expositionExclude.length);
   var len_event = eventNumbers - parseInt(eventExclude.length);
@@ -28,9 +15,8 @@
 
   var carsOverlay = $('.cars-page-overlay'),
       carsBody    = $('.cars-page-overlay').find('.cars-body'),
+      carsSideUl  = $('.cars-page-overlay').find('ul'),
       mainContent = $('section.cars-content'),
-      eventsBtn   = mainContent.find('li#events'),
-      expoBtn     = mainContent.find('li#expo'),
       expoList    = mainContent.find('.expo-list');
   var currentPage = 1;
   var imgCounter = 0;
@@ -46,14 +32,41 @@
     var folder = expNames[period];
     var number = expNumbers[period];
     var exclude = expExcludes[period];
-    var percents = expPercents[period][cols_count-1];
+    // var percents = expPercents[period][cols_count-1];
     for (i = 0; i < cols_count; i++) {
       children.eq(i).css({'width': 100/cols_count + '%'});
     }
-    for (i = 0; i < number; i++) {
+    for (i = 1; i < number; i++) {
       if (jQuery.inArray(i,exclude) != -1) continue;
-      children.eq(i%cols_count).append('<img src="/content/images/'+ folder +'/' + i + '.JPG"/>');
+      $('<img/>', {
+        src:     '/content/images/'+ folder +'/' + i + '.JPG',
+        click:   function(e){
+          removeBrightFilter();
+          // console.log();
+          findLi($(this).eq(0).attr('src'));
+          $(this).eq(0).addClass("lightfilter");
+        }
+      }).appendTo(children.eq((i-1)%cols_count));
+      // children.eq((i-1)%cols_count).append('<img src="/content/images/'+ folder +'/' + i + '.JPG"/>');
     }
+  };
+
+  var removeBrightFilter = function() {
+    carsBody.find('img').removeClass('lightfilter');
+    carsBody.find('img').removeClass('darkfilter');
+    expoList.removeClass('highlight-li');
+  };
+
+  var findLi = function(path) {
+    var str = path.split('').reverse()
+    var resultStr = "";
+    for (i = 0; i < str.length; i++)
+    {
+      if (str[i] == '/') break;
+      resultStr += str[i];
+    }
+    resultStr = resultStr.split('').reverse().join('').slice(0,-4);
+    carsSideUl.find('#' + resultStr).addClass('highlight-li');
   };
 
   var fixWidths = function() {
@@ -87,37 +100,41 @@
     });
   };
 
+  var highlightImage = function() {
 
-  expoBtn.on('click', function() {
-    var children = carsBody.children();
-    if (currentPage == 0) {
-      $(this).siblings().css({'background':'none'});
-      $(this).css({'background':'rgba(250,250,250,0.2)'});
-      distCols(1);
-      currentPage = 1;
-      expoList.show();
-      imgLoaded(len_exp);
-    }
+  };
+
+  expoList.on('click', function() {
+    var ptr = $(this).attr('id');
+    var imgname = ptr + '.JPG';
+    carsBody.find('img').addClass('darkfilter');
+    var image = carsBody.find("img[src$='/"+imgname+"']");
+    image.removeClass('darkfilter');
+    image.addClass('lightfilter');
+    $(this).siblings().removeClass('highlight-li');
+    $(this).addClass('highlight-li');
   });
-  eventsBtn.on('click', function() {
-    var children = carsBody.children();
-    if (currentPage == 1) {
-      $(this).siblings().css({'background':'none'});
-      $(this).css({'background':'rgba(250,250,250,0.2)'});
-      distCols(0);
-      currentPage = 0;
-      expoList.hide();
-      imgLoaded(len_event);
-    }
-  });
+
+  // carsBody.on('click', function() {
+  //   carsBody.find('img').removeClass('darkfilter');
+  //   carsBody.find('img').removeClass('lightfilter');
+  //   expoList.removeClass('highlight-li');
+  // });
+
+  // var images =  carsBody.find('img');
+  //
+  // carsBody.on('click', 'images', function() {
+  //   console.log($(this));
+  //   $(this).addClass('lightfilter');
+  // });
+
+
 
   var checkColsChanged = function() {
     var cols_count = carsBody.children().filter(function() {
       return $(this).css('display') !== 'none';
     }).length;
     if (prev_cols_count != cols_count) {
-      console.log(prev_cols_count);
-      console.log(cols_count);
       distCols(currentPage);
       imgLoaded(lens[currentPage]);
     }
