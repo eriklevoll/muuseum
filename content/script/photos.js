@@ -171,28 +171,23 @@
     }
   });
 
+  largePictureOverlay.on('click', function() {
+    imagesPage();
+  });
+
   picturesBody.children().on('click','img', function() {
     var windowWidth = $(window).width();
     if (windowWidth <= 750) {
       return;
     }
-    var closeBtn = largePicContainer.find('.large-picture-close');
     var source = $(this).attr('src');
     largePicContainer.css({
       'background': 'url('+ source +') no-repeat center center',
       'background-size': 'contain'
     });
-    var imgWidth = $(this).width();
-    var loc_left = $(this).position().left;
-    closeBtn.css({
-      'left:':  loc_left + imgWidth +'px !important'
-    })
     largePictureOverlay.fadeIn(200,function() {});
   });
 
-  $('.picture-large-overlay').find('span').on('click', function() {
-    imagesPage();
-  });
 
   $(document).keydown(function(e) {
     if (e.which === 27) {

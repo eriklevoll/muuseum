@@ -41,8 +41,8 @@
       $('<img/>', {
         src:     '/content/images/'+ folder +'/' + i + '.JPG',
         click:   function(e){
+          if ($(window).width() <= 750) return;
           removeBrightFilter();
-          // console.log();
           findLi($(this).eq(0).attr('src'));
           $(this).eq(0).addClass("lightfilter");
         }
