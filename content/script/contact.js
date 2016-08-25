@@ -15,7 +15,6 @@
     var sectionTop  = section.position().top;
     var scrollTop   = $('.contact-content-wrapper').scrollTop();
     var str = 'calc(100vh + '+sectionTop + 'px + '+scrollTop + 'px)';
-    console.log(str);
     contactBody.css({'height': str});
     $('.contact-content-wrapper').animate({
       scrollTop: sectionTop + scrollTop - 85

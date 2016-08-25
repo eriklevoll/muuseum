@@ -15,6 +15,7 @@
 
   var carsOverlay = $('.cars-page-overlay'),
       carsBody    = $('.cars-page-overlay').find('.cars-body'),
+      carsSide    = $('.cars-page-overlay').find('.cars-side'),
       carsSideUl  = $('.cars-page-overlay').find('ul'),
       mainContent = $('section.cars-content'),
       expoList    = mainContent.find('.expo-list');
@@ -32,7 +33,6 @@
     var folder = expNames[period];
     var number = expNumbers[period];
     var exclude = expExcludes[period];
-    // var percents = expPercents[period][cols_count-1];
     for (i = 0; i < cols_count; i++) {
       children.eq(i).css({'width': 100/cols_count + '%'});
     }
@@ -66,7 +66,14 @@
       resultStr += str[i];
     }
     resultStr = resultStr.split('').reverse().join('').slice(0,-4);
-    carsSideUl.find('#' + resultStr).addClass('highlight-li');
+    var liItem = carsSideUl.find('#' + resultStr);
+    if (liItem.length == 0) return;
+    liItem.addClass('highlight-li');
+    var sectionTop  = liItem.position().top;
+    var scrollTop   = carsSideUl.scrollTop();
+    carsSideUl.animate({
+      scrollTop: sectionTop + scrollTop - 85
+    }, 300);
   };
 
   var fixWidths = function() {
@@ -100,34 +107,21 @@
     });
   };
 
-  var highlightImage = function() {
-
-  };
-
   expoList.on('click', function() {
     var ptr = $(this).attr('id');
     var imgname = ptr + '.JPG';
     carsBody.find('img').addClass('darkfilter');
     var image = carsBody.find("img[src$='/"+imgname+"']");
+    var sectionTop  = image.position().top;
+    var scrollTop   = carsBody.scrollTop();
+    carsBody.animate({
+      scrollTop: sectionTop + scrollTop - 85
+    }, 300);
     image.removeClass('darkfilter');
     image.addClass('lightfilter');
     $(this).siblings().removeClass('highlight-li');
     $(this).addClass('highlight-li');
   });
-
-  // carsBody.on('click', function() {
-  //   carsBody.find('img').removeClass('darkfilter');
-  //   carsBody.find('img').removeClass('lightfilter');
-  //   expoList.removeClass('highlight-li');
-  // });
-
-  // var images =  carsBody.find('img');
-  //
-  // carsBody.on('click', 'images', function() {
-  //   console.log($(this));
-  //   $(this).addClass('lightfilter');
-  // });
-
 
 
   var checkColsChanged = function() {
