@@ -112,6 +112,7 @@
     var imgname = ptr + '.JPG';
     carsBody.find('img').addClass('darkfilter');
     var image = carsBody.find("img[src$='/"+imgname+"']");
+    console.log(image);
     var sectionTop  = image.position().top;
     var scrollTop   = carsBody.scrollTop();
     carsBody.animate({
