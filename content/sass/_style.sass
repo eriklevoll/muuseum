@@ -268,6 +268,43 @@ header.main-header
       // background: red
     // justify-content: left
     // justify-content: center
+    .mobile-nav
+      height: 100px
+      width: 40px
+      cursor: pointer
+      position: absolute
+      // background: #ccc
+      right: 10px
+      top: 0
+      display: none
+      flex-direction: column
+      justify-content: center
+      .line
+        width: 100%
+        height: 3px
+        margin: 5px 0
+        background: #ccc
+        border-radius: 2px
+    .mobile-nav-ul
+      display: none
+      position: absolute
+      right: 0
+      top: 100px
+      background: rgba(0,0,0,0.9)
+      margin: 0
+      padding: 0
+      ul
+        text-align: left
+        color: #ded9d9
+        font-size: 20px
+        li
+          padding: 10px
+          cursor: pointer
+          border-bottom: 1px solid #ccc
+          &:last-child
+            border-bottom: none
+          &:first-child
+            background: rgba(250,250,250,0.2)
     hr
       position: absolute
       right: 0

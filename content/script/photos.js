@@ -1,11 +1,6 @@
 (function($) {
 
   var period = 0;
-  // li(data-title="0") Tsaariaeg
-  // li(data-title="1") Saksaaeg
-  // li(data-title="2") Eestiaeg
-  // li(data-title="3") Nõukogude aeg
-  // li(data-title="4") Kaasaeg
 
   var tsarNumbers = 148;
   var tsarExclude = [3,11];
@@ -70,13 +65,20 @@
       pageLang        = $('.page-language');
   var picturesOverlay     = $('.pictures-page-overlay'),
       largePictureOverlay = $('.picture-large-overlay'),
-      sideNavUl           = picturesOverlay.find('ul'),
+      picturesHeader      = picturesOverlay.find('header'),
+      picturesSide        = picturesOverlay.find('.pictures-side'),
       headerHr            = picturesOverlay.find('.pictures-header hr'),
       staticTheme         = picturesOverlay.find('.static-theme-container'),
       fixedTheme          = picturesOverlay.find('.fixed-theme-container'),
+      sideNavUl           = picturesSide.find('ul'),
+      mobileNav           = picturesHeader.find('.mobile-nav'),
+      mobileNavUl         = picturesHeader.find('.mobile-nav-ul'),
+      mobileNavLi         = mobileNavUl.find('li'),
       largePicContainer   = largePictureOverlay.find('.large-picture-container'),
       picturesBody    = picturesOverlay.find('.pictures-body'),
       thumbDiv        = picturesBody.find('.thumb-div');
+
+  var naviVisible = false;
 
   var distributePictureCols = function(period) {
     var children = picturesBody.children();
@@ -134,6 +136,19 @@
   };
 
 
+
+  mobileNav.on('click', function() {
+    if (!naviVisible) {
+      mobileNavUl.show(300);
+      naviVisible = true;
+    } else {
+      mobileNavUl.hide(300);
+      naviVisible = false;
+    }
+  });
+
+
+
   var imagesPage = function() {
     largePictureOverlay.fadeOut(200,function() {});
   };
@@ -146,16 +161,38 @@
   };
 
   sideNavUl.children().on('click', function() {
+    if ($(this).hasClass('active')) return;
     var children = picturesBody.children();
-    if ($(this).hasClass('.active')) return;
+    mobileNavLi.css({'background':'none'});
     $(this).siblings().css({'background':'none'});
     period = $(this).attr('data-title');
-    // distributePictureCols(period);
+    var mobileNavElement = mobileNavUl.find('li[data-title=' + period + ']');
     distributePictureCols(period);
     imgLoaded(lens[period]);
     $(this).css({'background':'rgba(250,250,250,0.2)'});
-    $(this).siblings().removeClass('.active');
-    $(this).addClass('.active');
+    $(this).siblings().removeClass('active');
+    $(this).addClass('active');
+    mobileNavElement.css({'background':'rgba(250,250,250,0.2)'});
+    mobileNavElement.siblings().removeClass('active');
+    mobileNavElement.addClass('active');
+  });
+
+
+  mobileNavLi.on('click', function() {
+    if ($(this).hasClass('active')) return;
+    var children = picturesBody.children();
+    mobileNavLi.css({'background':'none'});
+    sideNavUl.find('li').css({'background':'none'});
+    period = $(this).attr('data-title');
+    var sideElement = sideNavUl.find('li[data-title=' + period + ']');
+    distributePictureCols(period);
+    imgLoaded(lens[period]);
+    $(this).css({'background':'rgba(250,250,250,0.2)'});
+    $(this).siblings().removeClass('active');
+    $(this).addClass('active');
+    sideElement.css({'background':'rgba(250,250,250,0.2)'});
+    sideElement.siblings().removeClass('active');
+    sideElement.addClass('active');
   });
 
   picturesBody.scroll(function(){

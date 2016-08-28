@@ -577,6 +577,60 @@ header.main-header .ru .nav-button-three p {
           justify-content: center;
 }
 
+.pictures-page-overlay header .mobile-nav, .cars-page-overlay header .mobile-nav {
+  height: 100px;
+  width: 40px;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  display: none;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pictures-page-overlay header .mobile-nav .line, .cars-page-overlay header .mobile-nav .line {
+  width: 100%;
+  height: 3px;
+  margin: 5px 0;
+  background: #ccc;
+  border-radius: 2px;
+}
+
+.pictures-page-overlay header .mobile-nav-ul, .cars-page-overlay header .mobile-nav-ul {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100px;
+  background: rgba(0, 0, 0, 0.9);
+  margin: 0;
+  padding: 0;
+}
+
+.pictures-page-overlay header .mobile-nav-ul ul, .cars-page-overlay header .mobile-nav-ul ul {
+  text-align: left;
+  color: #ded9d9;
+  font-size: 20px;
+}
+
+.pictures-page-overlay header .mobile-nav-ul ul li, .cars-page-overlay header .mobile-nav-ul ul li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+}
+
+.pictures-page-overlay header .mobile-nav-ul ul li:last-child, .cars-page-overlay header .mobile-nav-ul ul li:last-child {
+  border-bottom: none;
+}
+
+.pictures-page-overlay header .mobile-nav-ul ul li:first-child, .cars-page-overlay header .mobile-nav-ul ul li:first-child {
+  background: rgba(250, 250, 250, 0.2);
+}
+
 .pictures-page-overlay header hr, .cars-page-overlay header hr {
   position: absolute;
   right: 0;
@@ -1162,6 +1216,9 @@ header.main-header .ru .nav-button-three p {
 }
 
 @media (max-width: 750px) {
+  .page-logo {
+    display: none;
+  }
   section.pictures-body .col3, .cars-page-overlay .cars-content section.cars-body .col3 {
     display: none;
   }
@@ -1315,7 +1372,12 @@ header.main-header .ru .nav-button-three p {
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 750px) {
+  .pictures-page-overlay header .mobile-nav, .cars-page-overlay header .mobile-nav {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
   header.header-en, header.header-est, header.header-rus {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1354,6 +1416,12 @@ header.main-header .ru .nav-button-three p {
             justify-content: flex-end;
     padding: 25px 0;
     background: rgba(0, 0, 0, 0.8);
+  }
+  .pictures-page-overlay header .mobile-nav, .cars-page-overlay header .mobile-nav, .contact-page-overlay header .mobile-nav, .publications-page-overlay header .mobile-nav, .cars-page-overlay header .mobile-nav {
+    height: 80px;
+  }
+  .pictures-page-overlay header .mobile-nav-ul, .cars-page-overlay header .mobile-nav-ul, .contact-page-overlay header .mobile-nav-ul, .publications-page-overlay header .mobile-nav-ul, .cars-page-overlay header .mobile-nav-ul {
+    top: 80px;
   }
   .pictures-page-overlay header .subpage-header, .cars-page-overlay header .subpage-header, .contact-page-overlay header .subpage-header, .publications-page-overlay header .subpage-header, .cars-page-overlay header .subpage-header {
     font-size: 18px;
