@@ -775,6 +775,10 @@ header.main-header .ru .nav-button-three p {
   width: 20%;
 }
 
+.cars-page-overlay .cars-content {
+  overflow-y: auto;
+}
+
 .cars-page-overlay .cars-content .cars-side {
   -webkit-filter: blur(0.55px);
           filter: blur(0.55px);
@@ -825,6 +829,7 @@ header.main-header .ru .nav-button-three p {
 .cars-page-overlay .cars-content .cars-body {
   margin-left: 300px;
   margin-top: 100px;
+  overflow-y: scroll;
 }
 
 .cars-page-overlay .cars-content .cars-body .col img {
