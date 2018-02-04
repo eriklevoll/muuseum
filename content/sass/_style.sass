@@ -193,6 +193,13 @@ header.main-header
 
   .language-est, .language-eng, .language-rus
     font-family: sans-serif
+
+  .language-tib
+    font-family: 'TibetanUnicode'
+    font-size: 16px
+    &[data-title]:hover:after
+      top: 130%
+
       // left: 0
   .language-est
     background-image: url("content/images/ee.gif")
@@ -203,13 +210,13 @@ header.main-header
   .language-tib
     background-image: url("content/images/tib.jpg")
 
-.lang-tib
-  .language-est, .language-eng, .language-rus
-    &[data-title]:hover:after
-      content: attr(data-title)
-      font-size: 16px
-      top: 130%
-      font-family: 'TibetanUnicode'
+// .lang-tib
+//   .language-est, .language-eng, .language-rus
+//     &[data-title]:hover:after
+//       content: attr(data-title)
+//       font-size: 16px
+//       top: 130%
+//       font-family: 'TibetanUnicode'
 
 .overlay-back-button
   position: absolute
@@ -406,7 +413,7 @@ header.main-header
   @extend .pictures-page-overlay
   // display: flex
   header
-    @extend .pictures-header
+    // @extend .pictures-header
     // height: 100px
   //   position: fixed
   //   background: rgba(0,0,0,0.8)
