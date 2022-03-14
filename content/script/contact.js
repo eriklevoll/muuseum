@@ -8,7 +8,6 @@
       contactContact = contactBody.find('#projects .heading');
 
   contactNav.children().on('click', function(event) {
-    console.log('yes');
     event.preventDefault();
     var id          = $(this).attr('href');
     var section     = contactBody.find($(this).attr('href') + ' .heading');

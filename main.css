@@ -307,6 +307,21 @@ a {
   -webkit-filter: blur(0px);
   filter: blur(0px); }
 
+.script-wrapper {
+  color: white;
+  margin: 30px;
+  font-size: 20px;
+  font-family: "Montserrat";
+}
+
+.script-link {
+  margin: 10px 0;
+}
+
+.script-link:hover {
+  color: red;
+}
+  
 header.main-header {
   display: -webkit-box;
   display: -ms-flexbox;

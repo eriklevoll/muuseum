@@ -13,7 +13,7 @@
 </head>
 <body>
   <div class="video-container">
-    <video poster="content/images/frame.png" autoplay="autoplay" loop="loop">
+    <video poster="content/images/frame.png" autoplay="autoplay" loop="loop" muted>
       <source data-src="https://s3.eu-west-2.amazonaws.com/j-bucket0092/muuseum/T3.mp4" type="video/mp4"/>
       <source data-src="https://s3.eu-west-2.amazonaws.com/j-bucket0092/muuseum/T3.webm" type="video/webm"/>
     </video>
@@ -21,17 +21,17 @@
   <header class="main-header">
     <div class="nav-buttons-wrapper">
       <div class="nav-buttons-up"><a href="/contact">
-          <div data-overlay="contact-page-overlay" class="nav-button-five">
+          <div class="nav-button-five" data-overlay="contact-page-overlay">
             <p>Muuseum</p>
           </div></a><a href="/expositions">
-          <div data-overlay="cars-page-overlay" class="nav-button-one">
+          <div class="nav-button-one" data-overlay="cars-page-overlay">
             <p>Näitus</p>
           </div></a></div>
       <div class="nav-buttons-down"><a href="/photos">
-          <div data-overlay="pictures-page-overlay" class="nav-button-two">
+          <div class="nav-button-two" data-overlay="pictures-page-overlay">
             <p>Ajastud</p>
           </div></a><a href="/publications">
-          <div data-overlay="publications-page-overlay" class="nav-button-three">
+          <div class="nav-button-three" data-overlay="publications-page-overlay">
             <p>Kirjatööd</p>
           </div></a></div>
     </div>
@@ -39,9 +39,9 @@
   <div class="video-filter-overlay"></div>
   <div class="page-logo"></div>
   <div class="page-language"><a href="/en/">
-      <div data-title="English" class="language-eng"></div></a><a href="/ru/">
-      <div data-title="Русский" class="language-rus"></div></a><a href="/tib/">
-      <div data-title="བོད་ཡིག" class="language-tib"></div></a></div>
+      <div class="language-eng" data-title="English"></div></a><a href="/ru/">
+      <div class="language-rus" data-title="Русский"></div></a><a href="/tib/">
+      <div class="language-tib" data-title="བོད་ཡིག"></div></a></div>
   <script src="content/script/jquery-1.7.2.min.js"></script>
   <script src="content/script/checkbrowser.js"></script>
   <script src="content/script/main-min.js"></script>
