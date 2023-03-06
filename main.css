@@ -312,6 +312,7 @@ a {
   margin: 30px;
   font-size: 20px;
   font-family: "Montserrat";
+  height: 100vh;
 }
 
 .script-link {
